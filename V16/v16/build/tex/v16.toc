@@ -1,0 +1,9 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Zielsetzung}{3}{section.1}%
+\contentsline {section}{\numberline {2}Theorie}{3}{section.2}%
+\contentsline {section}{\numberline {3}Durchführung}{4}{section.3}%
+\contentsline {section}{\numberline {4}Auswertung}{5}{section.4}%
+\contentsline {section}{\numberline {5}Diskussion}{6}{section.5}%
+\contentsline {section}{\numberline {6}Anhang}{7}{section.6}%
+\contentsline {section}{\nonumberline Literatur}{8}{section*.1}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

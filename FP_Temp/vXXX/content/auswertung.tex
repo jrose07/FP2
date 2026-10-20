@@ -1,0 +1,26 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+
+% Fehlerrechnung
+Die in diesem Kapitel durchgeführten Fehlerrechnungen wurden mittels der Gaußschen Fehlerfortpflanzung 
+\begin{equation}
+    \sigma_f = \sqrt{\left( \frac{\partial f}{\partial x_1} \sigma_{x_1} \right)^2 + \left( \frac{\partial f}{\partial x_2} \sigma_{x_2} \right)^2 + ...}
+\end{equation}
+durchgeführt, sowie den Formeln 
+\begin{equation}
+    \overline{x} = \frac{1}{n} \sum^n_{i=1}x_i . 
+    \label{eq:mittelwert}
+\end{equation}
+für den Mittelwert und 
+\begin{equation}
+    \sigma_{\overline{x}} = \frac{\sigma_x}{\sqrt{n}} = \sqrt{\frac{1}{n(n-1)}  \sum^n_{i=1} \left( x_i - \overline{x}\right)^2 } .
+    \label{eq:abweichung}
+\end{equation}
+für die Standardabweichung einer Messreihe $\left( x_1, ... , x_n  \right)$.
+Der Einfachheit halber wird hierbei das Python-Paket \textit{uncertainties} verwendet. \cite{uncertainties} \\
+\hspace{1cm}
+% Ende Fehlerrechnung
+
+
+
+\clearpage
