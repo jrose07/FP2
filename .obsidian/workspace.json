@@ -1,0 +1,241 @@
+{
+  "main": {
+    "id": "aa7c88c9b7113c17",
+    "type": "split",
+    "children": [
+      {
+        "id": "f08b0567a075fc7c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4a193de456dba58d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "V16/Material/Answer to the Questions.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Answer to the Questions"
+            }
+          }
+        ]
+      },
+      {
+        "id": "a55500c800d0d8a3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "56793569f08a6f51",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "V16/Material/V16_RutherfordScattering.pdf",
+                "page": 1,
+                "left": -16,
+                "top": 291,
+                "zoom": 0.9273009494755375
+              },
+              "icon": "lucide-file-text",
+              "title": "V16_RutherfordScattering"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1eed7a213ac94058",
+    "type": "split",
+    "children": [
+      {
+        "id": "ce0e56214bb2e172",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ce2c24d2130b54cc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "59843b6a3df93764",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "415637b4ac22c42a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "93c729ec3a693741",
+    "type": "split",
+    "children": [
+      {
+        "id": "83c40aba4d08f836",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b4d6b0091c7d797e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "V16/Material/Answer to the Questions.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "cab4185b2507a0cd",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "V16/Material/Answer to the Questions.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "23d293184a45d608",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "535b941c75d1ca8e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "2da6bd961f17e4bc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "V16/Material/Answer to the Questions.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "d1be64f1e732587a",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false,
+      "pdf-plus:PDF++: Toggle auto-copy": false,
+      "pdf-plus:PDF++: Toggle auto-focus": false,
+      "pdf-plus:PDF++: Toggle auto-paste": false
+    }
+  },
+  "active": "4a193de456dba58d",
+  "lastOpenFiles": [
+    "V16/Unbenanntes Dokument",
+    "V16/Material/V16_RutherfordScattering.pdf",
+    "V16/Material/Answer to the Questions.md",
+    "V16/Material/Pasted image 20261025165011.png",
+    "V16/Material/Pasted image 20261025152739.png",
+    "Pasted image 20261025165011.png",
+    "V16/Material/bethe.pdf",
+    "V16/Material/v16.py",
+    "V16/Material/Povh et al. - 2014 - Teilchen und Kerne Eine Einführung in die physikalischen Konzepte.pdf",
+    "Pasted image 20261025152739.png"
+  ]
+}
