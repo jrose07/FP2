@@ -1,0 +1,5 @@
+Linear Regressions of Stopping:
+With Foil:
+m=-0.0341+/-0.0052V/mbar, b=10.1583+/-0.3949mbar
+Without Foil:
+m=-0.0292+/-0.0026V/mbar, b=12.3156+/-0.3000mbar

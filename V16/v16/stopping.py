@@ -29,7 +29,7 @@ ax.errorbar(p_air, dV_air, xerr=1, yerr=0.01, color="green", fmt="x", label="Sel
 result = linregress(p_air, dV_air)
 m = ufloat(result.slope, result.stderr)
 b = ufloat(result.intercept, result.intercept_stderr)
-p_fita = np.linspace(p_air.min(), p.max(), 100)
+p_fita = np.linspace(p_air.min()-10, p.max(), 100)
 dV_fita = noms(m)*p_fita + noms(b)
 ax.plot(p_fita, dV_fita, "b-", label="Linear Regression")
 m_air = m
@@ -86,8 +86,8 @@ ax.plot(p_fitg, dV_fitg, color="limegreen", linestyle="-", label="Linear Regress
 ax.set(
     xlabel=r"$p \, [\text{mbar}]$",
     ylabel=r"$\Delta V \, [V]$",
-    ylim=[0.9*dV.min(), 1.1*dV.max()],
-    xlim=[-50+p_air.min(), 1.5*p_air.max()]
+    ylim=[-0.1*dV.min(), 1.2*dV.max()],
+    xlim=[-50+p_air.min(), 2.1*p_air.max()]
 )
 ax.grid()
 ax.legend()
@@ -97,3 +97,7 @@ fig.savefig(dir + "stopping_comparison.pdf")
 """Calculate the dx of the gold foil now"""
 print(m_gold, m_air)
 print(b_gold, b_air)
+
+write('Linear Regressions of Stopping:\n')
+add(f"With Foil:\nm={m_gold:.4f}V/mbar, b={b_gold:.4f}mbar\n")
+add(f"Without Foil:\nm={m_air:.4f}V/mbar, b={b_air:.4f}mbar\n")
