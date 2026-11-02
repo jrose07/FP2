@@ -5,5 +5,5 @@
 \contentsline {section}{\numberline {4}Auswertung}{5}{section.4}%
 \contentsline {section}{\numberline {5}Diskussion}{6}{section.5}%
 \contentsline {section}{\numberline {6}Anhang}{7}{section.6}%
-\contentsline {section}{\nonumberline Literatur}{8}{section*.1}%
+\contentsline {section}{\nonumberline Literatur}{8}{section*.3}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
