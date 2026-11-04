@@ -12,23 +12,18 @@ dir = "content/plots/"
 dir_tab = "content/tables/"
 
 theta, N, dt = np.genfromtxt('raw/big_angles.csv', delimiter=",", unpack=True, skip_header=1)
+#Adjust theta?
+# theta = theta - (1.45 - 0.5)
 Nerr = np.sqrt(N)**(-1)/dt
+A = N/dt
+A_err = np.sqrt(A/(dt))
+tab2tex([theta, N, dt,A], [r"$\Theta \, [^{\circ}]$", r"$N$", r"$\Delta t \, [s] $", r"$A \, [s^{-1}]$"], dir_tab + "big_angles.tex", r"Measured Counts $N$ in intervall time $\Delta t$ for different angles $\Theta$, as well as the calculated count rates $A$.", lbl="big_angles", dgts=[3,5,5,3])
 N = N/dt
-# Nerr = 1/np.sqrt(N)
-index = theta != 20
-# print(index)
-# N = N[index]
-# theta = theta[index]
-# theta = theta[theta!=20]
-# print(Nerr, N)
-# print(theta, N)
+
+#Save to table
 
 def fit_func(theta, A, B):
-    return A/np.pow(np.sin(np.deg2rad(theta/2)), 4) + B
-
-# def fit_func(theta, a, x0, sigma):
-# def gaussian(x, a, x0, sigma):
-    # return a * np.exp(-(theta - x0)**2 / (2 * sigma**2))
+    return A/np.pow(np.sin(np.deg2rad((theta)/2)), 4) + B
 
 popt, pcov = curve_fit(fit_func, theta, N)
 
@@ -38,24 +33,17 @@ x_fit = np.linspace(theta.min(),theta.max(),100)
 y_fit = fit_func(x_fit, *popt)
 
 
-# x_max = x_fit[np.argmax(y_fit)]
-# print(x_max)
 fig, ax = plt.subplots()
-ax.errorbar(theta, N, yerr = Nerr, color="red", fmt="x", label="Data")
+ax.errorbar(theta, N, yerr = A_err, color="red", fmt="x", label="Data")
 ax.plot(x_fit, y_fit, "b-", label=r"$\sin(\Theta/2)^{-4}$-Fit")
-# ax.vlines(x_max, ymin=0*0.9*y_fit.max(), ymax=1.1*y_fit.max(), color="orange", linestyles="dashed")
-selected = theta == 0.5
-# ax.axvline(x_max, color="orange", linestyle="dashed", label=r"optimal $\Theta_0$")
-# ax.axvline(0.5, color="green", linestyle="dashed", label=r"selected $\Theta_0$")
 ax.grid()
 ax.set(
     xlabel=r"$\Theta \, [°]$",
-    ylabel=r"$N \, [s^{-1}]$",
+    ylabel=r"$A \, [s^{-1}]$",
     # xticks=(-4, -2, 0, 0.5, x_max, 2, 4)
     # xtickslabel=(-4,-2, 0, 0.5, )
     # ylim=[-0.5, None]
 )
-# ax.set_xticklabels([-4, -2, 0, 0.5, f"{x_max:.2f}", 2,4])
 
 ax.legend()
 # plt.show()
