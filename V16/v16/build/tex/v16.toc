@@ -11,5 +11,5 @@
 \contentsline {subsection}{\numberline {4.2}Examination of the Rutherford Scattering}{5}{subsection.4.2}%
 \contentsline {section}{\numberline {5}Discussion}{7}{section.5}%
 \contentsline {section}{\numberline {6}Attachment}{8}{section.6}%
-\contentsline {section}{\nonumberline References}{9}{section*.5}%
+\contentsline {section}{\nonumberline References}{9}{section*.7}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
