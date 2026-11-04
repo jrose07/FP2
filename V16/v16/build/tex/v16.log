@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.13)  2 NOV 2026 21:21
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.4.13)  4 NOV 2026 13:22
  restricted system commands enabled.
 **v16.tex
 (./v16.tex
@@ -417,14 +417,17 @@ Package babel Info: Non-standard hyphenation setup on input line 118.
 \l@unhyphenated=\language91
  (/home/max/.local/texlive/2025/texmf-dist/tex/generic/babel/luababel.def
 \bbl@attr@locale=\attribute4
-) (/home/max/.local/texlive/2025/texmf-dist/tex/generic/babel-german/ngerman.ldf
-Language: ngerman 2024/12/10 v2.15 German support for babel (post-1996 orthography)
- (/home/max/.local/texlive/2025/texmf-dist/tex/generic/babel-german/ngermanb.ldf
-Language: ngermanb 2024/12/10 v2.15 German support for babel (post-1996 orthography)
-Package babel Info: Making " an active character on input line 122.
- (/home/max/.local/texlive/2025/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-1996.tex UTF-8 German hyphenation patterns (reformed orthography) (/home/max/.local/texlive/2025/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-de-1996.tex German Hyphenation Patterns (Reformed Orthography, 2006) `dehyphn-x' 2024-02-28 (WL)))))) (/home/max/.local/texlive/2025/texmf-dist/tex/generic/babel/locale/de/babel-ngerman.tex
-Package babel Info: Importing font and identification data for ngerman
-(babel)             from babel-de.ini. Reported on input line 11.
+) (/home/max/.local/texlive/2025/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language23). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language23). Reported on input line 108.
+)) (/home/max/.local/texlive/2025/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
 ) (/home/max/.local/texlive/2025/texmf-dist/tex/latex/unicode-math/unicode-math.sty
 Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
  (/home/max/.local/texlive/2025/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty
@@ -1399,55 +1402,61 @@ Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
  (./build/tex/v16.aux
-Package babel Info: 'ngerman' activates 'ngerman' shorthands.
-(babel)             Reported  on input line 11.
-
 
 LaTeX Warning: Label `eq:abweichung' multiply defined.
 
 )
 \openout1 = v16.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+Package scrbase Info: activating english \abstractname on input line 12.
+Package scrbase Info: activating english \partname on input line 12.
+Package scrbase Info: activating english \figurename on input line 12.
+Package scrbase Info: activating english \tablename on input line 12.
+Package scrbase Info: activating english \contentsname on input line 12.
+Package scrbase Info: activating english \listfigurename on input line 12.
+Package scrbase Info: activating english \listtablename on input line 12.
+Package scrbase Info: activating english \refname on input line 12.
+Package scrbase Info: activating english \indexname on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  TU/LatinModernMath(1)/m/n --> TU/lmr/m/n on input line 13.
+(Font)                  TU/LatinModernMath(1)/m/n --> TU/lmr/m/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 13.
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 13.
+(Font)                  OT1/cmr/bx/n --> TU/lmr/bx/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 13.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 13.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/bx/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 13.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 12.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 13.
- (/home/max/.local/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-german.trsl
-File: translations-basic-dictionary-german.trsl (german translation file `translations-basic-dictionary')
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 12.
+ (/home/max/.local/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `german'. on input line 13.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 12.
 
-Package chemgreek Info: Activating mapping `fontspec' on line 13.
+Package chemgreek Info: Activating mapping `fontspec' on line 12.
 
  (/home/max/.local/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1471,44 +1480,35 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 13.
-Package microtype Info: Applying patch `item' on input line 13.
-Package microtype Info: Applying patch `toc' on input line 13.
+LaTeX Info: Redefining \microtypecontext on input line 12.
+Package microtype Info: Applying patch `item' on input line 12.
+Package microtype Info: Applying patch `toc' on input line 12.
 Package microtype Info: The `eqnum' patch may not be effective because you are
 (microtype)             using the mathtools package. Make sure to insert
 (microtype)             `\leftprotrusion' and `\rightprotrusion' as
 (microtype)             appropriate in mathtools's `\newtagform' command.
-Package microtype Info: Applying patch `eqnum' on input line 13.
-Package microtype Info: Applying patch `footnote' on input line 13.
-Package microtype Info: Applying patch `verbatim' on input line 13.
-LaTeX Info: Redefining \microtypesetup on input line 13.
+Package microtype Info: Applying patch `eqnum' on input line 12.
+Package microtype Info: Applying patch `footnote' on input line 12.
+Package microtype Info: Applying patch `verbatim' on input line 12.
+LaTeX Info: Redefining \microtypesetup on input line 12.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 13.
+LaTeX Info: Redefining \showhyphens on input line 12.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
  (/home/max/.local/texlive/2025/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
 File: mt-LatinModernRoman.cfg 2021/02/21 v1.1 microtype config. file: Latin Modern Roman (RS)
 )
-Package biblatex Info: Trying to load language 'ngerman'...
-Package biblatex Info: ... file 'ngerman.lbx' found.
- (/home/max/.local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
-File: ngerman.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-Package biblatex Info: Trying to load language 'german'...
-Package biblatex Info: ... file 'german.lbx' found.
- (/home/max/.local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/german.lbx
-File: german.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+ (/home/max/.local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
-Package biblatex Info: Trying to load language 'german'...
-Package biblatex Info: ... file 'german.lbx' found.
- (/home/max/.local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/german.lbx
-File: german.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
-))
 Package biblatex Info: LuaTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
@@ -1518,9 +1518,9 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'v16.bbl' found.
  (./build/tex/v16.bbl)
-Package biblatex Info: Reference section=0 on input line 13.
-Package biblatex Info: Reference segment=0 on input line 13.
-Package hyperref Info: Link coloring OFF on input line 13.
+Package biblatex Info: Reference section=0 on input line 12.
+Package biblatex Info: Reference segment=0 on input line 12.
+Package hyperref Info: Link coloring OFF on input line 12.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
@@ -1543,7 +1543,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 [1
 
 {/home/max/.local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package tocbasic Info: character protrusion at toc deactivated on input line 17.
+Package tocbasic Info: character protrusion at toc deactivated on input line 16.
  (./build/tex/v16.toc)
 \tf@toc=\write5
 
@@ -1585,39 +1585,39 @@ Package microtype Info: Loading generic protrusion settings for font family
 [8
 
 ]
-runsystem(latexminted cleantemp  --timestamp 20261102212135 A7C5EF5894E936B91BB633FF63438C94)...executed.
+runsystem(latexminted cleantemp  --timestamp 20261104132242 A7C5EF5894E936B91BB633FF63438C94)...executed.
  (./build/tex/v16.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `v16.aux' has not changed.
-(rerunfilecheck)             Checksum: 6945FDEB9369F5FE639AEA5DF6AE229E;3654.
+(rerunfilecheck)             Checksum: 5B48F7E12560149F1F6064184BEA513B;5773.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `v16.toc' has not changed.
-(rerunfilecheck)             Checksum: DD6A5EBA36BFF9D74CA7E19EA30C2116;553.
+(rerunfilecheck)             Checksum: 4327130C11886BFF91BC39DD1D2565BE;921.
 Package logreq Info: Writing requests to 'v16.run.xml'.
 
 \openout1 = v16.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 45184 strings out of 471941
+ 45161 strings out of 471941
  100000,2373549 words of node,token memory allocated
- 757 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 1 local_par, 8 glue, 4 kern, 1 penalty, 3 glyph, 30 attribute, 76 glue_spec, 17 attribute_list, 1 write nodes
-   avail lists: 1:2,2:437,3:114,4:70,5:156,6:23,7:1024,8:38,9:277,10:6,11:84,12:2
- 71035 multiletter control sequences out of 65536+600000
- 83 fonts using 32591207 bytes
- 113i,7n,104p,10916b,2936s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf>
-Output written on v16.pdf (8 pages, 42134 bytes).
+ 728 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 1 local_par, 5 glue, 4 kern, 1 penalty, 3 glyph, 29 attribute, 77 glue_spec, 16 attribute_list, 1 write nodes
+   avail lists: 1:2,2:689,3:168,4:86,5:156,6:35,7:998,8:38,9:277,10:6,11:58,12:2
+ 71033 multiletter control sequences out of 65536+600000
+ 112 fonts using 45109839 bytes
+ 113i,16n,104p,10916b,2936s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmromancaps10-regular.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf></home/max/.local/texlive/2025/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf>
+Output written on v16.pdf (8 pages, 46632 bytes).
 
-PDF statistics: 159 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 131072)
- 57 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 186 PDF objects out of 1000 (max. 8388607)
+ 141 compressed objects within 2 object streams
+ 23 named destinations out of 1000 (max. 131072)
+ 89 words of extra memory for PDF output out of 10000 (max. 100000000)
 

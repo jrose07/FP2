@@ -1,18 +1,18 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'build/tex/v16.blg'
-[36] biber:340> INFO - === Mon Nov  2, 2026, 21:21:35
-[50] Biber.pm:420> INFO - Reading 'build/tex/v16.bcf'
-[95] Biber.pm:994> INFO - Found 1 citekeys in bib section 0
-[104] Biber.pm:4463> INFO - Processing section 0
-[113] Biber.pm:4654> INFO - Looking for bibtex file 'lit.bib' for section 0
-[265] bibtex.pm:1713> INFO - LaTeX decoding ...
-[266] bibtex.pm:1519> INFO - Found BibTeX data source '../lit.bib'
-[267] Biber.pm:4654> INFO - Looking for bibtex file 'programme.bib' for section 0
-[403] bibtex.pm:1713> INFO - LaTeX decoding ...
-[408] bibtex.pm:1519> INFO - Found BibTeX data source '../programme.bib'
-[416] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[416] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[416] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'de-DE'
-[417] Biber.pm:4289> INFO - No sort tailoring available for locale 'de-DE'
-[420] bbl.pm:676> INFO - Writing 'build/tex/v16.bbl' with encoding 'UTF-8'
-[421] bbl.pm:779> INFO - Output to build/tex/v16.bbl
+[36] biber:340> INFO - === Wed Nov  4, 2026, 13:22:25
+[52] Biber.pm:420> INFO - Reading 'build/tex/v16.bcf'
+[92] Biber.pm:994> INFO - Found 1 citekeys in bib section 0
+[100] Biber.pm:4463> INFO - Processing section 0
+[106] Biber.pm:4654> INFO - Looking for bibtex file 'lit.bib' for section 0
+[230] bibtex.pm:1713> INFO - LaTeX decoding ...
+[232] bibtex.pm:1519> INFO - Found BibTeX data source '../lit.bib'
+[232] Biber.pm:4654> INFO - Looking for bibtex file 'programme.bib' for section 0
+[356] bibtex.pm:1713> INFO - LaTeX decoding ...
+[361] bibtex.pm:1519> INFO - Found BibTeX data source '../programme.bib'
+[368] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[369] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[369] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[369] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[375] bbl.pm:676> INFO - Writing 'build/tex/v16.bbl' with encoding 'UTF-8'
+[376] bbl.pm:779> INFO - Output to build/tex/v16.bbl
