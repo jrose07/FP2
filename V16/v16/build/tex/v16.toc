@@ -1,8 +1,8 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Objective}{3}{section.1}%
 \contentsline {section}{\numberline {2}Theoretical Background}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Alpha decay and the \ce {^{241}Am} source}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Rutherford-scattering}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.1}Rutherford-scattering}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Alpha decay and the \ce {^{241}Am} source}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Bethe-Bloch equation}{3}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Surface barrier detector}{3}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Experimental Setup and Procedure}{4}{section.3}%
