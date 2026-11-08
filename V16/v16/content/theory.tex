@@ -22,18 +22,41 @@ For the scattering Rtutherford derived a formular which discribes the scattering
 The assumptions of that are: that the the projectile and target are only point charges, the wohle 
 force on the porjectile is only the coulomb force, the nuclei of the target is at rest and cannot move, 
 it is calssicle and not relativistic and there is only one scattering and so no energy lost in the scattering. 
-
 With this it rusults
 \begin{equation}
+    \label{eqn:rut}
     \frac{\text d \sigma}{\text d \Omega} = \left(\frac{1}{4\pi\epsilon_0} \right)^2\left(\frac{zZe^2}{4E} \right)^2\frac{1}{\sin^4(\theta/2)\ .}
 \end{equation}
 
+There is $z$ the nuclear charge number of the projectile und $Z$ the one of the target. 
+$E$ is the kinetic energy of the projectile and $\theta$ the angle in wich the pojectile is beeing scattered \cite{Povh1995}.
+
 \subsection{Alpha decay and the \texorpdfstring{\ce{^{241}Am}}{241Am} source}
 
-
-
+The alpha decay is defined as $\ce{^A_ZX} \rightarrow \ce{^{A-4}_{Z-2}Y}+ \ce{^4_2He^{++}}$ where the $\ce{^4_2He^{++}}$ is the $\alpha$ particle itself.
+Americium-241 has been used as the $\alpha$ emitter.
+The half-life is $T_{1/2}= \SI{432.6}{a}$ with an activity of $A = \SI{330}{kBq}$ measured in October 1994, so the current activity is somewhat lower than that.
+The term diagram of \ce{^{241}Am} is given in \autoref{fig:td}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{../Material/The-Decay-Scheme-of-Am-241.pdf}
+    \caption{Decay scheme of \ce{^{241}Am}.}
+    \label{fig:td}
+\end{figure}
+The most important deacay is the one with an energy of $\SI{5.443}{MeV}$. Also given are some $\gamma$ decays with energys in the KeV range. 
+So it is possible to diffentiat between the $\alpha$ and the $\gamma$ decays. 
 
 \subsection{Bethe-Bloch equation}
+
+Charged particles los energy if they go through material, this happens because of many small Coulomb collsions with atomic electrons, 
+these ineratcation iosniese und excites the atoms. 
+This energy loss per distance is described by the Bethe-Bloch equation 
+\begin{equation}
+    -\frac{\mathrm{d}E}{\mathrm{d}x} = \frac{4 \pi e^4 z^2 N Z}{m_0 v^2 \left(4 \pi \varepsilon_0\right)^2}
+    \left[ \ln\left(\frac{2 m_0 v^2}{I}\right) - \ln\left(1 - \beta^2\right) - \beta^2 \right] \ .
+    \label{eq:bethe}
+\end{equation}
+
 
 \subsection{Surface barrier detector}
 

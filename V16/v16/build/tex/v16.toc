@@ -3,13 +3,13 @@
 \contentsline {section}{\numberline {2}Theoretical Background}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Rutherford-scattering}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Alpha decay and the \ce {^{241}Am} source}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Bethe-Bloch equation}{3}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Surface barrier detector}{3}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Experimental Setup and Procedure}{4}{section.3}%
-\contentsline {section}{\numberline {4}Analysis}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Callibration of the Solid-Angle Measurement}{5}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Examination of the Rutherford Scattering}{5}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Discussion}{7}{section.5}%
-\contentsline {section}{\numberline {6}Attachment}{8}{section.6}%
-\contentsline {section}{\nonumberline References}{9}{section*.7}%
+\contentsline {subsection}{\numberline {2.3}Bethe-Bloch equation}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Surface barrier detector}{4}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Experimental Setup and Procedure}{5}{section.3}%
+\contentsline {section}{\numberline {4}Analysis}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Callibration of the Solid-Angle Measurement}{6}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Examination of the Rutherford Scattering}{6}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Discussion}{8}{section.5}%
+\contentsline {section}{\numberline {6}Attachment}{9}{section.6}%
+\contentsline {section}{\nonumberline References}{10}{section*.8}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
