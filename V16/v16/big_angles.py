@@ -28,7 +28,9 @@ def fit_func(theta, A, B):
 popt, pcov = curve_fit(fit_func, theta, N)
 
 perr = np.diag(np.sqrt(pcov))
-print(popt, perr)
+alpha = ufloat(popt[0], perr[0])
+beta = ufloat(popt[1], perr[1])
+print(alpha, beta)
 x_fit = np.linspace(theta.min(),theta.max(),100)
 y_fit = fit_func(x_fit, *popt)
 
@@ -48,3 +50,44 @@ ax.set(
 ax.legend()
 # plt.show()
 fig.savefig(dir + "big_angles.pdf")
+
+
+# Now using modified fit function:
+
+def fit_func_mod(theta, A, B, C):
+    return A/np.pow(np.sin(np.deg2rad((theta - C)/2)), 4) + B
+
+popt, pcov = curve_fit(fit_func_mod, theta, N)
+
+perr = np.diag(np.sqrt(pcov))
+alpha_mod = ufloat(popt[0], perr[0])
+beta_mod = ufloat(popt[1], perr[1])
+theta_0_mod = ufloat(popt[2], perr[2])
+print(alpha, beta, theta_0_mod)
+x_fit = np.linspace(theta.min(),theta.max(),100)
+y_fit = fit_func_mod(x_fit, *popt)
+
+
+fig, ax = plt.subplots()
+ax.errorbar(theta, N, yerr = A_err, color="red", fmt="x", label="Data")
+ax.plot(x_fit, y_fit, "b-", label=r"$\sin((\Theta - \Theta_0)/2)^{-4}$-Fit")
+ax.grid()
+ax.set(
+    xlabel=r"$\Theta \, [°]$",
+    ylabel=r"$A \, [s^{-1}]$",
+    # xticks=(-4, -2, 0, 0.5, x_max, 2, 4)
+    # xtickslabel=(-4,-2, 0, 0.5, )
+    # ylim=[-0.5, None]
+)
+
+ax.legend()
+# plt.show()
+fig.savefig(dir + "big_angles_mod.pdf")
+
+
+
+#Fit parameters 
+write('Fit Parameters for Rutherford cross section:\n')
+add(f"alpha = {alpha:.2g} s^(-1), beta = {beta:.2g} s^(-1)\n")
+add('Fit Parameters for modified fit:\n')
+add(f"alpha = {alpha_mod:.2g} s^(-1), beta = {beta_mod:.2g} s^(-1), Theta_0 = {theta_0_mod:.2g} DEG\n\n")

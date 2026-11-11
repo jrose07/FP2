@@ -98,6 +98,6 @@ fig.savefig(dir + "stopping_comparison.pdf")
 print(m_gold, m_air)
 print(b_gold, b_air)
 
-write('Linear Regressions of Stopping:\n')
+add('Linear Regressions of Stopping:\n')
 add(f"With Foil:\nm={m_gold:.4f}V/mbar, b={b_gold:.4f}mbar\n")
 add(f"Without Foil:\nm={m_air:.4f}V/mbar, b={b_air:.4f}mbar\n")
