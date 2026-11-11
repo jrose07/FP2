@@ -69,5 +69,23 @@ In addition the electrons are in a quasi-free state at rest so the projectile is
 
 \subsection{Surface barrier detector}
 
+\subsection{Error Calculation}
+% Error Calculation
+The error calculation in this protocoll is being done using the gaussian error propagation
+\begin{equation}
+    \sigma_f = \sqrt{\left( \frac{\partial f}{\partial x_1} \sigma_{x_1} \right)^2 + \left( \frac{\partial f}{\partial x_2} \sigma_{x_2} \right)^2 + ...} \, ,
+\end{equation}
+as well as the formulas 
+\begin{equation}
+    \overline{x} = \frac{1}{n} \sum^n_{i=1}x_i \, ,
+    \label{eq:mittelwert}
+\end{equation}
+for the mean and 
+\begin{equation}
+    \sigma_{\overline{x}} = \frac{\sigma_x}{\sqrt{n}} = \sqrt{\frac{1}{n(n-1)}  \sum^n_{i=1} \left( x_i - \overline{x}\right)^2 } \, ,
+    \label{eq:abweichung}
+\end{equation}
+for the standard deviation. 
+To simplify these calculations, the Python-package \textit{uncertainties}~\cite{uncertainties} is being used. 
 
 \clearpage
