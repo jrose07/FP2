@@ -61,13 +61,44 @@ Here $z$ and $v$ are the charge number and velocity of the incident particle, $\
 $N$ is the number density of the target atoms, $Z$ their atomic number, $m_0$ the electron mass
 and $I$ the mean ionization energy of the target material.
 Important dependencies is the $1/\beta^2$ which say, that slower projectiles are depsiting more energy. 
+Through that the deposit energy peaks just befor it stops, which is called the "Bragg-Peak". 
+The Range of a charged particle is calculated through
+\begin{equation}
+    R = \int_0^{E_0}\left(- \frac{\text d E}{\text d x }\right)^{-1}\text d e \ .
+\end{equation}
 
 The assumptions for the Bethe-Bloch equation is that projectile is Heavy in contrast to the electron, so that the projectile will not be deflected. 
 In addition the electrons are in a quasi-free state at rest so the projectile is much faster than the bound elecetrons.
-
+For this experiment it is impoortant, that the Energy loss per distance is dependent on the presuere of the air, so 
+\begin{equation}
+    -\frac{\text{d}E}{\text d x} \propto p \ .
+\end{equation}
+For the Measurement of the thickness of the foil this relation ist used. 
+It is useed by using the linear dependencie of the energyloss to the presuere. 
+Because the rest energy can be measuerd through the surface barrier detecotr which will be discribed in the following.
 % Hier ab Bragg curve and range
 
 \subsection{Surface barrier detector}
+
+The detector is based on silicon, which has a band gap of $E_g \approx \SI{1.12}{eV}$ at room temperature.
+Because of that only a few charge carriers are thermally excited.
+If an n-doped and a p-doped region meet, the majority carriers diffuse across the junction and recombine.
+This creates a depletion zone without free charge carriers, in which the fixed ionised dopant atoms build up an electric field.
+This depletion zone is the sensitive volume of the detector, because the charge created there by the $\alpha$ particle is separated by the field and collected.
+\\
+The surface barrier detector consists of an n-type silicon wafer with a very thin layer of gold on the front side.
+The gold forms a Schottky contact with the silicon, which acts like a pn junction, so the depletion zone is directly below the surface.
+Because the gold layer is so thin, the $\alpha$ particles only lose a few $\si{keV}$ before they reach the sensitive volume.
+\\
+The detector is operated in reverse bias, which widens the depletion zone.
+Its depth is given by
+\begin{equation}
+    w = \sqrt{\frac{2\varepsilon\left(U + U_\text{bi}\right)}{e N_D}} \ ,
+\end{equation}
+with the bias voltage $U$, the built-in voltage $U_\text{bi}$ and the donor concentration $N_D$.
+The depth $w$ has to be larger than the range of the $\alpha$ particles in silicon, which is about $\SI{25}{\micro\meter}$ to $\SI{30}{\micro\meter}$ at $\SI{5.5}{MeV}$.
+Only then the particles deposit their whole energy in the sensitive volume and the measured signal is proportional to their energy.
+
 
 \subsection{Error Calculation}
 % Error Calculation
