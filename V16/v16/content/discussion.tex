@@ -1,13 +1,40 @@
 \section{Discussion}
 \label{sec:Discussion}
 
-% Die relative Messabweichung wurde nach der Formel 
 For the calculation of the relative experimental error, the formula
 \begin{equation}
     \Delta x =   \frac{ \left| x_{exp} - x_{theo} \right|   }{x_{theo}} \, ,
     \label{eq:abweichung}
 \end{equation}
 is being used.
-% bestimmt.
+
+\subsection{Rutherford Scattering}
+
+The main results regarding the measured rutherford scattering are the theory fits in~\autoref{fig:big_angles} and~\autoref{fig:big_angles_mod}.
+As mentioned before, when the Zero-Point $\Theta_0$ selected dependend on the small-angle measurement in~\autoref{fig:small_angles} was used, the curve does not seem to fit really good to the data points. 
+This certainly improves when using the modified fit function, with a variable $\Theta_0$, as shown in~\autoref{fig:big_angles_mod}. 
+However this modified fit yields a $\Theta_0 = \qty{-5(1.2)}{^{\circ}}$, which is a value far outside the suggested $\Theta_0$'s from the small angle measurement. 
+For that reason, the relevance of the modified fit can be pushed back as it also does not include the datapoint at $\Theta = 30^{\circ}$, which was measured for the longest time (and therefore has the lowest uncertainty).
+Smaller deviations from the selected $\Theta_0$ still are possible to explain the oberseved ``missmatch'' between fit funtion and data, as a slightly higher $\Theta_0$ is beig suggested using a gaussian fit in~\autoref{fig:small_angles}.
+Still this systematic error alone does not explain all the deviations, which is why the impact of smaller statistical errors of especially data points with lower angles $\Theta$ has to be emphasized. 
+The time of measurement for those was just high enough to pass the $1200$-Counts mark in order to achieve a relative uncertainty of below $10 \%$, but small errors in those have a larger impact on the performance of the fit, since the slope is quite high there.
+This deviation could therefore be just a statistical error and could be treated by measuring for a longer time and introducing a better Zero-Point $\Theta_0$.
+
+\subsection{Determining the foil thickness}
+
+In comparison with the theoretical foil thickness $d_\T{theo} = \qty{2}{\micro\meter}$, the experimentally determined one $d_\T{exp} = \qty{2.2(0.5)}{\micro\meter}$~\eqref{eq:d_exp} has a relative deviation of $\Delta d = \qty{12(25)}{\%}$.
+This value is quite good, given the rather small amount of measurements in the lower pressure regime which increases the statistical uncertainty of the slope and intercept of the linear regression. 
+Additionally this hints a good interpretation of the pressure plateau as an offset induced by the electrical components (e.g. amplifier, pre-amplifier). 
+For better reliability a seperate measurement of the conversion factor between pulse height at the oscilloscope and deposited energy would be good, as the method using the intersection here could be quite faulty. 
+That is, because the obererved pulse height when measuring at the oscilloscope was highly dependend on the trigger level. 
+This can be explained, as the energy deposition in air is a statistical process, so by choosing an arbitrary trigger level and not changing it for the next pressure measurement it could be possible that the pulse height does not change, as still enough $\alpha$-particles with energy higher than the trigger level arrive, whilst the mean energy still goes down.
+In order to prevent that, we adjusted the trigger level at each measurement to the highest level at which a pulse still was observed. 
+This apparently worked well, as the relative error $\Delta d$ is quite low.
+
+% That is, because the oberseved plateau could also have been an effect introduced by some sort of ``survivor bias'':
+% Because there were some issues in the measured pulse height being highly dependend on the used trigger level at the oscilloscope, only the highest possible trigger level that still yielded a pulse was used for every measurement. 
+% This trigger-dependency however could have smeared the oberved effect, because the energy loss of the $\alpha$-particles is a statistical process and hence the range of it in air is not the same for all $\alpha$-particles. 
+% When only measuring the highest energy particles, the mean energy of $\alpha$-particles at a given pressure could be much lower than the measured one and therefore by just waiting long enough for enough particles to trigger at a given trigger level, the oberseved curvature could have 
+
 
 \clearpage

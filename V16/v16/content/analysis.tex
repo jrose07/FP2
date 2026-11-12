@@ -114,7 +114,8 @@ For lower pressures the energy loss is therefore rather small and therefore the 
     \Delta E &\approx \dif{E}{x} \Delta x \propto -p \, ,
 \end{align}
 because the stopping power is rather constant over the length of energy deposition.
-For larger pressures the deposited energy of the $\alpha$-particles in the air is higher, and therefore the stopping power doesnt remain constant anymore over the course of stopping.
+The measured pulse height therefore decreases in a linear fashion, until the range $R_\text{air}$ of the $\alpha$-particles in air decreases below the source-detector distance $L$, which means only some $\alpha$-particles hit the detector. \\
+The reason why the measured curve does not decrease until zero will be discussed later, and for this analysis the plateau will be treated as an underground level on the oscilloscope.
 
 The linear regression yields the following fitparameters, using the abbrevations (wf) $=$ ``with foil'' and (wof) $=$ ``without foil'':
 \begin{align}
@@ -122,29 +123,50 @@ The linear regression yields the following fitparameters, using the abbrevations
     m^{\mathrm{(wof)}} &= \qty{-29(3)e-2}{\volt\per\milli\bar}, & b^{\mathrm{(wof)}} &= \qty{12.3(0.3)}{\milli bar} \, ,
 \end{align}
 with $m$ being the slope and $b$ being the $y$-axis intersection. 
+Also the underground level is being evaluated at $V_0^{\mathrm{(wof)}} = \qty{5(0.5)}{\volt}$. \\
 
 With that, the foil thickness can be calculated, by looking at the pulse height difference at $p = 0$. 
-At that point, no $\alpha$-particle energy is being lost through interaction with the air molecules and the difference in pulse height between the two curves of measurement with and without foil is only explainable through the energy loss in the gold foil $\Delta E_\T{foil}$. 
+At that point, no $\alpha$-particle energy is being lost through interaction with the air molecules.
+Hence, the difference in pulse height between the two curves with and without the foil is only explainable through the energy loss in the gold foil $\Delta E_\T{au}$. 
 In other words the relation 
 \begin{align}
-    \Delta V(p=0) := \Delta {V}^{\mathrm{(wof)}}(p=0) - \Delta V^{\mathrm{(wf)}}(p=0) = c \cdot \Delta E_\T{foil}
+    \Delta E_\T{au} = c \cdot \left(\Delta {V}^{\mathrm{(wof)}}(p=0) - \Delta V^{\mathrm{(wf)}}(p=0)\right) = c \Delta V(p=0)
 \end{align}
 with the conversion factor $c$ (between voltage measured from the Surface Barrier Detector and the deposited energy) must hold. 
-As the energy loss at $p=0$ is oberservably still linear in $p$ and the thickness of the gold foil is really small, one can assume that the energy loss through the gold foil is small and so $\Delta E_\T{foil} \approx \dif{E}{x}\Delta_x$ should be the case.
+For a sufficiently thin foil, the approximation $\Delta E_\T{au} \approx \dif{E}{x}|_\T{au} d_\T{au}$ is sufficable.
 Using this and the linear regression, the foil thickness is determined through
 \begin{align}
-    \Delta x &= \frac{b^{\mathrm{(wof)}} - b^{\mathrm{(wf)}}}{c \cdot \dif{E}{x}|_\T{foil}}~\label{eq:delta_x} \, .
+    d_\T{au} &= c \cdot \frac{b^{\mathrm{(wof)}} - b^{\mathrm{(wf)}}}{\dif{E}{x}|_\T{au}}~\label{eq:delta_x} \, .
 \end{align}
 
-As $\dif{E}{x}|_\T{foil}$ can be calculated using the Bethe-Bloch-Formula, the only missing factor is the $c$. 
-In order to obtain $c$, the slope of the linear regression without the foil can be examined, as 
+As $\dif{E}{x}|_\T{foil}$ can be calculated using the Bethe-Bloch-Formula, the only missing factor is $c$. 
+In order to obtain $c$, the slope of the linear regression without the foil can be examined:
 \begin{align}
-    m = \dif{\Delta V}{p} = c \dif{E}{p} = c \dif{}{p} \left(\dif{E}{x}|_\T{air} \Delta x_\T{air}\right) \, .
+    \dif{E}{p} = c \cdot \dif{\Delta V}{p} = c \cdot m \implies \dif{}{p} \left(\dif{E}{x}|_\T{air} L \right) = mc~\label{eq:conversion} \, ,
 \end{align}
-Plugging this into~\eqref{eq:delta_x}, one gets
-
+in which $m = m^{\mathrm{(wof)}}$ and $L$ being the length between the detector and source.
+$L$ can be extrapolated by looking at the pressure $p_\T{stop}$, where the slope in~\autoref{fig:stopping_general} intersects with the underground level. 
+At that point, the range of the $\alpha$-particles should be exactly $L$ and since $R_\T{air} \propto (\dif{E}{x})^{-1} \propto p^{-1}$ the length $L$ can be calculated using
 \begin{align}
-    \Delta x &= \frac{b^{\mathrm{(wof)}} - b^{\mathrm{(wf)}}}{m} \cdot \frac{\dif{}{p}\dif{E}{x}|_\T{air} \Delta x_\T{air}}{\dif{E}{x}_\T{foil}} = \frac{b^{\mathrm{(wof)}} - b^{\mathrm{(wf)}}}{m} 
+    L = R_\T{air}(E_0, p_\T{stop}) = \frac{p_0}{p_\T{stop}} R_\T{air}(E_0, p_0) \, .
+\end{align}
+
+With 
+\begin{align}
+    p_0 &= \qty{1}{atm}, & p_\T{stop} = \frac{V_0^{\mathrm{(wof)}} - b^{\mathrm{(wof)}}}{m^{\mathrm{(wof)}}} &= \qty{250(30)}{\milli bar}, \\
+    E_0 &= \qty{5.638}{MeV}\text{\cite{AtomkaerirekrCgibinNuclidenucAm241}}, & R_\T{air}(E_0, p_0) &= \qty{4.35}{\centi\meter}\text{\cite{astar}} \, ,
+\end{align}
+we get $L = \qty{17(2)}{\centi\meter}$. \\
+
+Plugging $L$ and the values
+\begin{align}
+    z &= 2, & Z_\T{air} &= 14.46, & I &= \qty{16}{eV} \cdot Z^{0.9}\text{\cite{Povh1995}}, \\
+    T &= 20^{\circ} C, & Z_\T{au} &= 79, & N_\T{au} = \frac{\rho_\T{au}}{m_\T{au}} &= \qty{5.9069e28}{m^{-3}}\text{\cite{CompositionGOLD}} \, ,
+\end{align}
+into the formula for $c$~\eqref{eq:conversion}, we get $c = \qty{0.45(0.04)}{MeV\per\volt}$.
+Finally inserting everything into~\eqref{eq:delta_x}, the thickness of the gold foil is calculated to be 
+\begin{align}
+    d_\T{au} &= \qty{2.2(0.5)}{\micro\meter}~\label{eq:d_exp} \, .
 \end{align}
 
 \clearpage

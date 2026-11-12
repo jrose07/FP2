@@ -34,10 +34,12 @@ beta_0 = np.sqrt(1 - (m_alpha*const.c**2/(m_alpha*const.c**2+E_0))**2)
 density = 1.20479E-03 #g/cm^3
 range = 5.243E-03 #g/cm^2
 range = range/density*1e-2 #m
+print(f"range{range}")
 
 p_stop = stopping.p_knee_air #mbar
 p_0 = 1013.25 #mbar
 L = range * p_0/p_stop
+print(f"L = {L*1e2:.4f} cm")
 
 """Conversion between Voltage and Energy:"""
 # STP_AIR = ...
@@ -57,7 +59,8 @@ c = c * 1e-5*1e3 #Pa->mbar
 c = 1/c /const.e /1e6 #MeV/V
 c = c * const.e * 1e6 #J/V (SI units better)
 print(f"Der Detektor ist {L} m lang")
-print(f"1V sind {c} MeV")
+print(f"1V sind {c} J")
+print(f"1V sind {c/const.e*1e-6} MeV")
 
 
 """Now calculate the thickness of the gold foil"""
@@ -73,9 +76,11 @@ print(STP_GOLD)
 #Not NIST:
 n_e = rho_au * Z_au / m_atom
 I_au = 10 * const.e * Z_au
+print(f"N_au = {n_e / Z_au} 1/m^3")
 # print(n_e)
 STP_GOLD = 4*np.pi*n_e * z**2 / (const.m_e*const.c**2*beta_0**2) * (const.e**2/(4*np.pi*const.epsilon_0))**2 * ( np.log(2*const.m_e*const.c**2*beta_0**2/(I_au*(1-beta_0**2))) - beta_0**2  )
 print(STP_GOLD)
 
 dx_au = dE/STP_GOLD *1e6 #µm
 print(f"Die errechnete Dicke der Gold-Folie beträgt: {dx_au:.g} µm")
+print(f"Relative Abweichung von theoriewerte d_theo = {2} µm beträgt Delta d = {np.abs(2 - dx_au)/2*100} \%")
