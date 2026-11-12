@@ -15,6 +15,8 @@ dir_tab = "content/tables/"
 #Air
 p, dV = np.genfromtxt("raw/stopping_air.csv", delimiter=",", skip_header=1, unpack=True)
 
+tab2tex([p,dV], [r"$p \, [mbar]$", r"$\Delta V \, [V]$"], dir_tab + "stopping_wof.tex", r"Pulse height $\Delta V$ in dependence of pressure $p$ without foil.", "stopping_wof", dgts=4)
+
 fig, ax = plt.subplots()
 ax.grid()
 
@@ -31,9 +33,25 @@ m = ufloat(result.slope, result.stderr)
 b = ufloat(result.intercept, result.intercept_stderr)
 p_fita = np.linspace(p_air.min()-10, p.max(), 100)
 dV_fita = noms(m)*p_fita + noms(b)
-ax.plot(p_fita, dV_fita, "b-", label="Linear Regression")
+ax.plot(p_fita, dV_fita, "b-", label="Linear Regression Slope")
 m_air = m
 b_air = b
+
+"""Do a linregress for the background as well and determine the intersection pressure of those"""
+p_bg, dV_bg = p[notselect], dV[notselect]
+
+result = linregress(p_bg, dV_bg)
+a = ufloat(result.slope, result.stderr)
+d = ufloat(result.intercept, result.intercept_stderr)
+
+a = 0
+d = ufloat(np.mean(dV[notselect]), np.std(dV[notselect]))
+d_air = d # V
+
+p_knee_air = (d-b)/(m-a)
+# p_knee_air = -b/m
+print(f"p_knee_air: {p_knee_air}")
+ax.plot(p_fita, noms(a)*p_fita+noms(d), "r-", label="Constant plateau")
 
 ax.set(
     xlabel=r"$p \, [\text{mbar}]$",
@@ -45,6 +63,8 @@ fig.savefig(dir + "stopping_air.pdf")
 
 #Gold
 p, dV = np.genfromtxt("raw/stopping_gold.csv", delimiter=",", skip_header=1, unpack=True)
+
+tab2tex([p,dV], [r"$p \, [mbar]$", r"$\Delta V \, [V]$"], dir_tab + "stopping_wf.tex", r"Pulse height $\Delta V$ in dependence of pressure $p$ with foil.", "stopping_wf", dgts=4)
 
 fig, ax = plt.subplots()
 ax.grid()
@@ -64,9 +84,25 @@ m = ufloat(result.slope, result.stderr)
 b = ufloat(result.intercept, result.intercept_stderr)
 m_gold = m
 b_gold = b
+"""Do a linregress for the background as well and determine the intersection pressure of those"""
+p_bg, dV_bg = p[notselect], dV[notselect]
+
+result = linregress(p_bg, dV_bg)
+a = ufloat(result.slope, result.stderr)
+d = ufloat(result.intercept, result.intercept_stderr)
+
+a = 0
+d = np.mean(dV[notselect])
+
+p_knee_au = (d-b)/(m-a)
+# p_knee_au = -b/m
+print(f"p_knee_au: {p_knee_au}")
+
+
 p_fitg = np.linspace(p_gold.min()-20, p.max(), 100)
 dV_fitg = noms(m)*p_fitg + noms(b)
-ax.plot(p_fitg, dV_fitg, "b-", label="Linear Regression")
+ax.plot(p_fitg, dV_fitg, "b-", label="Linear Regression Slope")
+# ax.plot(p_fitg, noms(a)*p_fitg+noms(d), "r-", label="Constant plateau")
 
 ax.set(
     xlabel=r"$p \, [\text{mbar}]$",
@@ -101,3 +137,5 @@ print(b_gold, b_air)
 add('Linear Regressions of Stopping:\n')
 add(f"With Foil:\nm={m_gold:.4f}V/mbar, b={b_gold:.4f}mbar\n")
 add(f"Without Foil:\nm={m_air:.4f}V/mbar, b={b_air:.4f}mbar\n")
+add(f"Height for Background in air stuff d_air = {d_air:.4f} V\n")
+add(f"p_knee_air = {p_knee_air:.4f} mbar\n")

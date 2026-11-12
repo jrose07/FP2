@@ -8,6 +8,18 @@ The absolute uncertainty of the counting rates, that were measured in this exper
 because $N$ is poisson-distributed.
 % End of Error Calculation
 
+\subsection{Signal Shape}
+
+The shape of the signal after the amplifier is shown in \autoref{fig:shapeofyou}. 
+The comparison with the signal before the amplifier and after the pre-amplifier is not possible, because of noise, no common shape was recognizable.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/pics/oszi.jpeg}
+    \caption{Shape of the signal after the amplifier.}
+    \label{fig:shapeofyou}
+\end{figure}
+
 \subsection{Callibration of the Solid-Angle Measurement}
 
 To callibrate the zero point in the solid angle measuring apparatus, the measured counting rates from~\autoref{tab:small_angles} are being shown in~\autoref{fig:small_angles}. \\
@@ -53,7 +65,7 @@ The resulting fit of the modified fit function
     A_\T{mod}(\Theta) = \frac{\alpha}{\sin(\frac{\Theta - \Theta_0}{2})^4} + \beta~\label{eq:mod_fit_ruth} \, ,
 \end{equation}
 is being shown in \autoref{fig:big_angles_mod}.
-The fitparameters are 
+The fitparameters of the modified fit function are
 \begin{align}
     \alpha &= \qty{3.2(1.6)e-5}{s^{-1}}, & \beta &= \qty{0.14(0.17)}{s^{-1}}, & \Theta_0 &= \qty{-5(1.2)}{^{\circ}} \, .
 \end{align}
@@ -65,5 +77,74 @@ The fitparameters are
     \label{fig:big_angles_mod}
 \end{figure}
 
+\subsection{Determining the foil thickness}
+
+In order to determine the thickness of the foil, the dependence on the air pressure of the pulse height (which is proportional to the deposited energy) at the oscilloscope was measured. 
+This was done in two measuring series, one with and one without the foil.
+The data for that is found in~\autoref{tab:stopping_wof} and~\autoref{tab:stopping_wf} and visualized in~\autoref{fig:stopping_general}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]{content/plots/stopping_air.pdf}
+        \caption{Without gold foil.}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\textwidth]{content/plots/stopping_gold.pdf}
+        \caption{With gold foil.}
+    \end{subfigure}
+    \caption{Pulse height $\Delta V$ in dependence of pressure $p$ without foil (a) and with foil (b). Also a linear regression is performed.}
+    \label{fig:stopping_general}
+\end{figure}
+
+For the lower pressures a linear regression using \textit{NumPy}~\cite{numpy} was performed. 
+In order to understand why that was done, one has to look at the pressure dependence of the Bethe-Bloch-Formula~\eqref{eq:bethe}.
+Using the ideal gas law, the density of target atoms $N$ can be written as 
+\begin{align}
+    N = \frac{pV}{k_B T}
+\end{align} 
+and hence
+\begin{align}
+    -\dif{E}{x} &= \frac{4\pi}{m_0 c^2} \frac{z^2}{\beta^2}\left(\frac{e^2}{4\pi\epsilon_0}\right)^2 \frac{p Z}{k_B T} \cdot \left[\ln\left(\frac{2 m_0 c^2 \beta^2}{I(1-\beta^2)}\right) - \beta^2\right] &\implies \dif{E}{x} &\propto -p \,.
+\end{align}
+
+For lower pressures the energy loss is therefore rather small and therefore the deposited energy can be approximated as 
+\begin{align}
+    \Delta E &\approx \dif{E}{x} \Delta x \propto -p \, ,
+\end{align}
+because the stopping power is rather constant over the length of energy deposition.
+For larger pressures the deposited energy of the $\alpha$-particles in the air is higher, and therefore the stopping power doesnt remain constant anymore over the course of stopping.
+
+The linear regression yields the following fitparameters, using the abbrevations (wf) $=$ ``with foil'' and (wof) $=$ ``without foil'':
+\begin{align}
+    m^{\mathrm{(wf)}} &= \qty{-34(5)e-2}{\volt\per\milli\bar}, & b^{\mathrm{(wf)}} &= \qty{10.2(0.4)}{\milli bar}, \\
+    m^{\mathrm{(wof)}} &= \qty{-29(3)e-2}{\volt\per\milli\bar}, & b^{\mathrm{(wof)}} &= \qty{12.3(0.3)}{\milli bar} \, ,
+\end{align}
+with $m$ being the slope and $b$ being the $y$-axis intersection. 
+
+With that, the foil thickness can be calculated, by looking at the pulse height difference at $p = 0$. 
+At that point, no $\alpha$-particle energy is being lost through interaction with the air molecules and the difference in pulse height between the two curves of measurement with and without foil is only explainable through the energy loss in the gold foil $\Delta E_\T{foil}$. 
+In other words the relation 
+\begin{align}
+    \Delta V(p=0) := \Delta {V}^{\mathrm{(wof)}}(p=0) - \Delta V^{\mathrm{(wf)}}(p=0) = c \cdot \Delta E_\T{foil}
+\end{align}
+with the conversion factor $c$ (between voltage measured from the Surface Barrier Detector and the deposited energy) must hold. 
+As the energy loss at $p=0$ is oberservably still linear in $p$ and the thickness of the gold foil is really small, one can assume that the energy loss through the gold foil is small and so $\Delta E_\T{foil} \approx \dif{E}{x}\Delta_x$ should be the case.
+Using this and the linear regression, the foil thickness is determined through
+\begin{align}
+    \Delta x &= \frac{b^{\mathrm{(wof)}} - b^{\mathrm{(wf)}}}{c \cdot \dif{E}{x}|_\T{foil}}~\label{eq:delta_x} \, .
+\end{align}
+
+As $\dif{E}{x}|_\T{foil}$ can be calculated using the Bethe-Bloch-Formula, the only missing factor is the $c$. 
+In order to obtain $c$, the slope of the linear regression without the foil can be examined, as 
+\begin{align}
+    m = \dif{\Delta V}{p} = c \dif{E}{p} = c \dif{}{p} \left(\dif{E}{x}|_\T{air} \Delta x_\T{air}\right) \, .
+\end{align}
+Plugging this into~\eqref{eq:delta_x}, one gets
+
+\begin{align}
+    \Delta x &= \frac{b^{\mathrm{(wof)}} - b^{\mathrm{(wf)}}}{m} \cdot \frac{\dif{}{p}\dif{E}{x}|_\T{air} \Delta x_\T{air}}{\dif{E}{x}_\T{foil}} = \frac{b^{\mathrm{(wof)}} - b^{\mathrm{(wf)}}}{m} 
+\end{align}
 
 \clearpage

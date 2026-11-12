@@ -33,7 +33,11 @@ beta_0 = np.sqrt(1 - (m_alpha*const.c**2/(m_alpha*const.c**2+E_0))**2)
 #Range of alpha particles in air:
 density = 1.20479E-03 #g/cm^3
 range = 5.243E-03 #g/cm^2
-L = range/density *1e-2 #m
+range = range/density*1e-2 #m
+
+p_stop = stopping.p_knee_air #mbar
+p_0 = 1013.25 #mbar
+L = range * p_0/p_stop
 
 """Conversion between Voltage and Energy:"""
 # STP_AIR = ...
@@ -51,8 +55,9 @@ c = m_air /L / STP_AIR #V/mbar / m /J * m * Pa = V/J * Pa/mbar
 c = c * 1e-5*1e3 #Pa->mbar
 #Reverse conversion (V->MeV), also E = c*U
 c = 1/c /const.e /1e6 #MeV/V
-print(f"1V sind {c} MeV")
 c = c * const.e * 1e6 #J/V (SI units better)
+print(f"Der Detektor ist {L} m lang")
+print(f"1V sind {c} MeV")
 
 
 """Now calculate the thickness of the gold foil"""
