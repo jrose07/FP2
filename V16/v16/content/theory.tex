@@ -1,82 +1,88 @@
 \section{Theoretical Background}
 \label{sec:Theory}
-For particle physics an imoportant concept is the cross section $\sigma$. 
-The cross-section describes the propabylity, for a intaraction to happen. 
-It can also be imagine as the effective target area for the pojectile. 
-It is depended of the projectile, the energy of the projectile und the target, the unit of the cross-section is $\SI{1}{\barn}=\SI{e-28}{\meter\squared}$.
-For this experiment the more important question is: where goes the scattered particle. 
-This information is given in the differential cross section $\frac{\text d \sigma }{\text d \omega}$.
-For a nuclei which only has a Coulomb Potential it is given by the Rutherford formula, which will be handled in the next section.
+In particle physics, an important concept is the cross section $\sigma$. 
+The cross-section describes the probability for an interaction to happen. 
+It can also be imagined as the effective target area for the projectile \cite{Povh1995}.
+It depends on the projectile, its energy and the target. The unit of the cross section is $\SI{1}{\barn}=\SI{e-28}{\meter\squared}$.
+For this experiment the more important question is: where does the scattered particle go?
+This information is given by the differential cross section
+\begin{equation}
+    \frac{\text d \sigma}{\text d \Omega} = \frac{1}{\dot N_0 \, n x}\frac{\text d \dot N}{\text d \Omega} \, ,
+    \label{eqn:diffsigma}
+\end{equation}
+which describes the fraction of particles scattered into the solid angle element $\text d \Omega$ at the angle $\theta$ \cite{Povh1995}.
+Here, $\dot N_0$ is the rate of incident particles, $n$ the number density of the target nuclei and $x$ the thickness of the foil.
+This holds as long as the foil is thin enough that every particle is scattered at most once.
+For a nucleus with only a Coulomb potential, it is given by the Rutherford formula, which is discussed in the next section.
+Since the Coulomb potential has an infinite range, the total cross section $\sigma$ diverges in this case, so only the differential cross section can be measured.
 
-\subsection{Rutherford-scattering}
+\subsection{Rutherford scattering}
 
-The model the Rutherford experiment tried to proof is the so called "plum pudding" or Thompson model, wicht discribes the Atom 
-as that the whole atom is evenly filled with positiv charges with the electrons inside of it. 
-By this model only small scattering in small angles would be possible. 
-But with the Rutherford scattering experiment it has been shown that this isn't the case. 
-It showed that the porjectile whtich were $\alpha$-particles are scattered in all direction, so big angles which shouldn't be possible. 
-Rutherford's explanaiton is the so called Rutherford atom model which states, 
-that only a very small positiv charged core is most of the mass and the electrons are around that. 
+The model tested by the Rutherford experiment is the so-called \enquote{plum pudding} or Thomson model, 
+which describes the atom as a homogeneous distributed positive charge in which the electrons are embedded \cite{demtroeder3}.
+In this model, only small deflection angles are possible.
+However, the scattering experiment by Geiger and Marsden showed that this is not the case \cite{geiger1913}.
+Most $\alpha$-particles passed the foil almost undeflected, but some were scattered by large angles, even above $90°$.
+Rutherford's explanation is the nuclear model of the atom, so that
+the positive charge and almost the entire mass are concentrated in a very small nucleus, which is surrounded by the electrons \cite{rutherford1911}.
 \\
-For the scattering Rtutherford derived a formular which discribes the scattering. 
-The assumptions of that are: that the the projectile and target are only point charges, the wohle 
-force on the porjectile is only the coulomb force, the nuclei of the target is at rest and cannot move, 
-it is calssicle and not relativistic and there is only one scattering and so no energy lost in the scattering. 
-With this it rusults
+For the scattering, Rutherford derived a formula that describes the scattering. 
+The assumptions of that are that the projectile and target are only point charges, the whole 
+force on the projectile is only the Coulomb force; the nuclei of the target are at rest and cannot move. 
+It is classical and not relativistic, and there is only one scattering, and no energy is lost in the scattering. 
+This results in
 \begin{equation}
     \label{eqn:rut}
-    \frac{\text d \sigma}{\text d \Omega} = \left(\frac{1}{4\pi\epsilon_0} \right)^2\left(\frac{zZe^2}{4E} \right)^2\frac{1}{\sin^4(\theta/2)\ .}
+    \frac{\text d \sigma}{\text d \Omega} = \left(\frac{1}{4\pi\epsilon_0} \right)^2\left(\frac{zZe^2}{4E} \right)^2\frac{1}{\sin^4(\theta/2)}\ .
 \end{equation}
-
-There is $z$ the nuclear charge number of the projectile und $Z$ the one of the target. 
-$E$ is the kinetic energy of the projectile and $\theta$ the angle in wich the pojectile is beeing scattered \cite{Povh1995}.
+There is $z$, the nuclear charge number of the projectile, and $Z$, the one of the target. 
+$E$ is the kinetic energy of the projectile and $\theta$ the angle in which the projectile is being scattered \cite{Povh1995}.
 
 \subsection{Alpha decay and the \texorpdfstring{\ce{^{241}Am}}{241Am} source}
 
-The alpha decay is defined as $\ce{^A_ZX} \rightarrow \ce{^{A-4}_{Z-2}Y}+ \ce{^4_2He^{++}}$ where the $\ce{^4_2He^{++}}$ is the $\alpha$ particle itself.
-Americium-241 has been used as the $\alpha$ emitter.
-The half-life is $T_{1/2}= \SI{432.6}{a}$ with an activity of $A = \SI{330}{kBq}$ measured in October 1994, so the current activity is somewhat lower than that.
+The alpha decay can be written as $\ce{^A_ZX} \rightarrow \ce{^{A-4}_{Z-2}Y}+ \ce{^4_2He^{2+}}$ where the $\ce{^4_2He^{2+}}$ is the $\alpha$ particle itself.
+Americium-241 is used as the $\alpha$ emitter.
+The half-life is $T_{1/2}= \SI{432.2}{a}$ with an activity of $A = \SI{330}{kBq}$ measured in October 1994, so the current activity is somewhat lower than that \cite{Durchfuhrung}.
 The term diagram of \ce{^{241}Am} is given in \autoref{fig:td}.
-% \begin{figure}[htbp]
-%     \centering
-%     \includegraphics[width=0.75\textwidth]{../Material/The-Decay-Scheme-of-Am-241.pdf}
-%     \caption{Decay scheme of \ce{^{241}Am}.}
-%     \label{fig:td}
-% \end{figure}
-The most important deacay is the one with an energy of $\SI{5.443}{MeV}$. Also given are some $\gamma$ decays with energys in the KeV range. 
-So it is possible to diffentiat between the $\alpha$ and the $\gamma$ decays. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.75\textwidth]{v16/content/pics/The-Decay-Scheme-of-Am-241.pdf}
+    \caption{Decay scheme of \ce{^{241}Am}. Picture from \cite{inproceedings}}
+    \label{fig:td}
+\end{figure}
+The most important decay is the one with an energy of $\SI{5.486}{MeV}$. Also given are some $\gamma$ decays with energies in the keV range. 
+So it is possible to differentiate between the $\alpha$ and the $\gamma$ decays \cite{inproceedings}. 
 
 \subsection{Bethe-Bloch equation}
 
-Charged particles los energy if they go through material, this happens because of many small Coulomb collsions with atomic electrons, 
-these ineratcation iosniese und excites the atoms. 
+Charged particles lose energy when passing through matter. 
+This is caused by many small Coulomb collisions with atomic electrons, which ionise and excite the atoms \cite{leo}.
 This energy loss per distance is described by the Bethe-Bloch equation 
 \begin{equation}
-    -\frac{\mathrm{d}E}{\mathrm{d}x} = \frac{4 \pi e^4 z^2 N Z}{m_0 v^2 \left(4 \pi \varepsilon_0\right)^2}
+    -\frac{\text{d}E}{\text{d}x} = \frac{4 \pi e^4 z^2 N Z}{m_0 v^2 \left(4 \pi \epsilon_0\right)^2}
     \left[ \ln\left(\frac{2 m_0 v^2}{I}\right) - \ln\left(1 - \beta^2\right) - \beta^2 \right] \ .
     \label{eq:bethe}
 \end{equation}
-
 Here $z$ and $v$ are the charge number and velocity of the incident particle, $\beta = v/c$,
 $N$ is the number density of the target atoms, $Z$ their atomic number, $m_0$ the electron mass
 and $I$ the mean ionization energy of the target material.
-Important dependencies is the $1/\beta^2$ which say, that slower projectiles are depsiting more energy. 
-Through that the deposit energy peaks just befor it stops, which is called the "Bragg-Peak". 
-The Range of a charged particle is calculated through
+An important dependency is the $1/\beta^2$ which says that slower projectiles are depositing more energy. 
+Through that, the deposit energy peaks just before it stops, which is called the "Bragg-Peak". 
+The range of a charged particle is calculated through
 \begin{equation}
-    R = \int_0^{E_0}\left(- \frac{\text d E}{\text d x }\right)^{-1}\text d e \ .
+    R = \int_0^{E_0}\left(- \frac{\text d E}{\text d x }\right)^{-1}\text d E \ .
 \end{equation}
 
-The assumptions for the Bethe-Bloch equation is that projectile is Heavy in contrast to the electron, so that the projectile will not be deflected. 
-In addition the electrons are in a quasi-free state at rest so the projectile is much faster than the bound elecetrons.
-For this experiment it is impoortant, that the Energy loss per distance is dependent on the presuere of the air, so 
+The Bethe-Bloch equation assumes that the projectile is heavy compared to an electron, so it is hardly deflected.
+In addition, the electrons are assumed to be quasi-free and at rest, and the projectile has to be much faster than the bound electrons.
+For this experiment it is important that the energy loss per distance is dependent on the pressure of the air, so 
 \begin{equation}
     -\frac{\text{d}E}{\text d x} \propto p \ .
 \end{equation}
-For the Measurement of the thickness of the foil this relation ist used. 
-It is useed by using the linear dependencie of the energyloss to the presuere. 
-Because the rest energy can be measuerd through the surface barrier detecotr which will be discribed in the following.
-% Hier ab Bragg curve and range
+For the measurement of the thickness of the foil, this relation is used. 
+It is used by using the linear dependence of the energy loss on the pressure. 
+Because the rest energy can be measured through the surface barrier detector, which will be described in the following.
+
 
 \subsection{Surface barrier detector}
 
@@ -98,8 +104,8 @@ Its depth is given by
 with the bias voltage $U$, the built-in voltage $U_\text{bi}$ and the donor concentration $N_D$.
 The depth $w$ has to be larger than the range of the $\alpha$ particles in silicon, which is about $\SI{25}{\micro\meter}$ to $\SI{30}{\micro\meter}$ at $\SI{5.5}{MeV}$.
 Only then the particles deposit their whole energy in the sensitive volume and the measured signal is proportional to their energy.
-
-
+The $\alpha$ particles creates electron-hole pairs, one per $\approx \SI{3.6}{eV}$. The collected charge is therefore proportional to the deposited energy.
+A disadvantage of the surface barrier detector is its sensitivity to light, which is why the chamber has to be covered so no light is hitting the detector \cite{leo}.
 \subsection{Error Calculation}
 % Error Calculation
 The error calculation in this protocoll is being done using the gaussian error propagation
