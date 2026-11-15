@@ -14,33 +14,11 @@
               "type": "markdown",
               "state": {
                 "file": "V16/Material/Answer to the Questions.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Answer to the Questions"
-            }
-          }
-        ]
-      },
-      {
-        "id": "a55500c800d0d8a3",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "56793569f08a6f51",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "V16/Material/V16_RutherfordScattering.pdf",
-                "page": 1,
-                "left": -16,
-                "top": 291,
-                "zoom": 0.9273009494755375
-              },
-              "icon": "lucide-file-text",
-              "title": "V16_RutherfordScattering"
             }
           }
         ]
@@ -105,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 260.5
   },
   "right": {
     "id": "93c729ec3a693741",
@@ -227,15 +205,22 @@
   },
   "active": "4a193de456dba58d",
   "lastOpenFiles": [
-    "V16/Unbenanntes Dokument",
-    "V16/Material/V16_RutherfordScattering.pdf",
+    "V16/v16/build/tex/v16.pdf",
+    "V16/v16/build/tex/lualatex179542.fls",
+    "V16/v16/build/tex/lualatex177740.fls",
+    "V16/v16/build/tex/lualatex177695.fls",
+    "V16/v16/build/tex/lualatex172732.fls",
+    "V16/v16/build/tex/lualatex172540.fls",
+    "V16/v16/build/tex/lualatex172390.fls",
+    "V16/v16/build/tex/lualatex172221.fls",
+    "V16/v16/build/tex/lualatex172033.fls",
+    "V16/v16/build/tex/lualatex170934.fls",
+    "V16/v16/build/tex/lualatex170856.fls",
+    "V16/v16/content/pics/setup.png",
     "V16/Material/Answer to the Questions.md",
     "V16/Material/Pasted image 20261025165011.png",
     "V16/Material/Pasted image 20261025152739.png",
     "Pasted image 20261025165011.png",
-    "V16/Material/bethe.pdf",
-    "V16/Material/v16.py",
-    "V16/Material/Povh et al. - 2014 - Teilchen und Kerne Eine Einführung in die physikalischen Konzepte.pdf",
     "Pasted image 20261025152739.png"
   ]
 }
