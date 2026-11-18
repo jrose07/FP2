@@ -1,0 +1,15 @@
+Europium Quelle Abstand:4,675cm
+Europium Zeit der Messung: 1h0min35s
+
+Caesium Quelle AbSTAND: 4,670cm
+Caesium Zeit der Messung: 1h18min57s
+
+Barium Quelle Abstand: 4,665cm
+Barium Zeit der Messung: 1h04min06s
+
+was_das_question Zeit der Messung: 1h02min15s
+
+Nothing: start: 15:24 Uhr 16.11.2026
+stop: 12:35 Uhr 17.11.2026
+
+Abstand: 7,9cm
