@@ -19,7 +19,7 @@ m = ufloat(0.11950, 0.00005)  # keV/Kanal
 b = ufloat(-0.98, 0.23)       # keV
 
 # Spektrum laden: Zeile 13 bis 8204 der .Spe-Datei sind die 8192 Kanäle
-counts = np.genfromtxt("raw/Caesium.Spe", skip_header=12, max_rows=8192)
+counts = np.genfromtxt("raw/V18_Max_and_Julian/Caesium.Spe", skip_header=12, max_rows=8192)
 counts = counts / ((1*60*60) + (18*60) + 57)  # Messzeit Caesium: 1h18min57s
 counts = counts - underground
 
