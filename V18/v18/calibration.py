@@ -16,7 +16,7 @@ dir_tab = "content/tables/"
 t = 824428800
 A_0 = ufloat(4130,60)
 T_2 = 13.537*365.25*24*60*60
-a =  4.675 +1.5 # Abstand Quelle - Detektor in cm
+a =  7.9-4.675 +1.5 # Abstand Quelle - Detektor in cm
 r = 4.5 / 2      # Radius des Ge-Kristalls in cm (Durchmesser 45 mm)
 
 # Spektrum laden: Zeile 13 bis 8204 der .Spe-Datei sind die 8192 Kanäle 
