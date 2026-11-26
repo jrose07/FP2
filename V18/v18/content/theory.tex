@@ -44,7 +44,7 @@ The compton effect descibes the inelastic scattering of photons with electrons, 
 
 The final energy $E_\gamma'$ of the incident photon can be calculated via 
 \begin{align}
-    E_\gamma' &= \frac{E_\gamma}{1 + \frac{E_\gamma}{m_e c^2} (1 - \cos(\Theta))} \, ,
+    E_\gamma' &= \frac{E_\gamma}{1 + \frac{E_\gamma}{m_e c^2} (1 - \cos(\Theta))}~\label{eq:compton_energy} \, ,
 \end{align}
 with scattering angle $\Theta$ and incident photon energy $E_\gamma$.
 For an angle of $\Theta = 180^{\circ}$, the maximal possible energy gets transfered to the electron, which then can be oberserved in the detector as the compton edge.
@@ -65,28 +65,82 @@ As the photon energies relevant for this experiment are not above this threshold
 
 A germanium detector uses the semiconducting properties of the main material, namely a germanium crystal. 
 Germanium is an indirect semiconductor with a small band gap of $\Delta = \qty{0.67}{eV}$~\cite{bandstructurege}, which is why it has to be cooled with liquid nitrogen, in order for it to not have too much noise due to excited thermal electrons.
+In~\autoref{fig:bands_germanium} the bandstructure of germanium is shown.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/pics/bands_ge.png}
+    \caption{Bandstructure of germanium~\cite{bandstructurege}.}
+    \label{fig:bands_germanium}
+\end{figure}
+
+The main mechanism for detecting the energy of incoming $\gamma$-rays is the creation of electron-hole-pairs by the photoelectron for example. 
+To achieve a high energy resolution it is therefore important to have a small average energy needed to excite electron-hole pairs. 
+In germanium this value is $\epsilon_\T{Ge} = \qty{2.96}{eV}$, while for silicon an average energy of $\epsilon_\T{Si} = \qty{3.81}{eV}$ is needed at $T = \qty{77}{K}$~\cite{leoTechniquesNuclearParticle1994a}.
+In general germanium is a good material for energy detection of $\gamma$-sources precisely because of that value.
+
+In order to actually detect these electron-hole-pairs it is important, to collect these before they recombine.
+This is being done by using reverse-biased pn-doted germanium. \\
+
+The way this works is by creating a depletion zone, so a zone empty of mobile charge carriers in the germanium detector. 
+For that the germanium crystal is being n- and p-doped on different sides, so in equilibrium these electrons and holes meet at the border of this pn-junction to recombine, leaving behind positive and negative ions. 
+This leads to an intrinsic localized electrical field in the depletion zone, which immediately seperates any electron-hole pairs created in this zone.
+To increase the size of the depletion zone, an outer electric can be put on the diode to increase this intrinsic electric field and therefore also increase the size of the depletion zone.
+This is called reverse-bias and a simple sketch of this effect is shown in~\autoref{fig:reverse_bias}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/pics/pn_junction.png}
+    \caption{Depletion zone of a pn-junctioned diode with and without reverse bias~\cite{leoTechniquesNuclearParticle1994a}.}
+    \label{fig:reverse_bias}
+\end{figure}
+
+In summary, the $\gamma$-ray hitting the semiconductor interacts with the matter in the previously described ways and thereby creates many electron-hole pairs in the depletion zone.
+If the depletion zone is big enough for the photon to deposit all of its energy the number of created electron-hole-pairs is directly proportional to the photon energy and the created electrons and holes drift towards the anode and cathode because of the electric field, where they turn into a current and later recombine. 
+This current can be amplified and measured to determine the photon energy.
 
 
 
-- germanium band structure (vllt pic einfügen)  
- -> why is it good for detecting? (what about the indirect band gap)
+% - germanium band structure (vllt pic einfügen)  
+%  -> why is it good for detecting? (what about the indirect band gap)
 
-- pn junction stuff
-    -> depletion zone with reverse bias(paar grafiken aus diesem buch übernehmen, erklären)
+% - pn junction stuff
+%     -> depletion zone with reverse bias(paar grafiken aus diesem buch übernehmen, erklären)
 
-- was passiert mit charge collection und pre-amp?
+% - was passiert mit charge collection und pre-amp?
 
+\subsection{Properties of monochromatic gamma-emitters in germanium detectors}
 
+The typical spectrum of a monochromatic gamma-emitter is shown in~\autoref{fig:spectrum_typical}.
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/pics/spectrum.png}
+    \caption{Typical spectrum of a monochromatic gamma-emitter (here $^{137}\mathrm{Cs}$)~\cite{ermisComparisonTwoDiscrimination2021}.}
+    \label{fig:spectrum_typical}
+\end{figure}
 
+This spectrum has several characteristics that can be explained by the methodology of detection in the germanium detector. \\
 
+One characteristic is the photopeak or also called full-energy-peak. 
+This is being created, when the photoeffect of the incident photon occurs, so all of the energy of the $\gamma$-ray is being measured. 
+The energy resolution of the detector can be observed by looking at the full-width-half-maximum (FWHM) of the photopeak. \\
 
+Then there is the compton continuum, with lower energies than the photoeffect, as this occurs, when the incident photon not directly gets absorbed by an electron but first compton-scatters and hence producing electrons with a continous energy distribution.
+This compton continuum, has a maximal achievable energy, when the photon scatters only once and deposits the maximal energy to the electron.
+This is also called compton edge whilst its energy can be calculated using~\eqref{eq:compton_energy}.
+For a scattering angle of $\Theta = 180^{\circ}$ the compton edge energy is 
+\begin{align}
+    E_c &= E_\gamma - E_\gamma'(\Theta = \pi) = \frac{2E_\gamma^2}{m_e c^2 + 2E_\gamma} \, .
+\end{align}
 
+The minimal energy of the compton continuum is restricted by the minimal photon energy that can reach the depletion zone. \\
+By closely looking at the compton continuum, there is one more small peak, that stems from photons that do not directly hit the detector but rather hit the material of the enclosing box, do compton (back-)scattering and then get detected from the detector.
+Because this peak comes from compton backscattering ($\Theta = \pi$), the energy of this backscattering peak can be evaluated as 
+\begin{align}
+    E_\T{backscatter} = \frac{E_\gamma}{1 + 2 \frac{E_\gamma}{m_e c^2}} \, .
+\end{align}
 
-
-
-
-% \subsection{Properties of monochromatic gamma-emitters in germanium detectors}
 
 
 
