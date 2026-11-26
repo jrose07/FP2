@@ -35,7 +35,7 @@ plt.figure()
 plt.stairs(counts, edges, fill=True, label="Ba-133")
 plt.plot(energies[peaks], counts[peaks], "x", color="red", label="peaks")
 plt.xlabel("Energy $E$ / keV")
-plt.ylabel("Count rate $A$ / s$^{-1}$")
+plt.ylabel("Counts per second / s$^{-1}$")
 plt.yscale("log")
 plt.legend()
 plt.tight_layout()
@@ -51,8 +51,7 @@ def gauss(K, h, mu, sigma, c):
 window = 40  # Kanäle links und rechts vom Peak
 N_line = []
 E_peak = []
-fig, axs = plt.subplots(1, len(peaks_fit), figsize=(3 * len(peaks_fit), 3.5))
-for K, ax in zip(peaks_fit, axs):
+for K in peaks_fit:
     K_fit = channels[K - window:K + window]
     y_fit = counts[K - window:K + window]
     p0 = [counts[K], K, 5, np.median(y_fit)]
@@ -63,16 +62,18 @@ for K, ax in zip(peaks_fit, axs):
     N_line.append(np.sqrt(2 * np.pi) * h * abs(sigma))
     E_peak.append(m * mu + b)
 
-    K_fine = np.linspace(K_fit[0], K_fit[-1], 300)
-    ax.plot(energies[K_fit], y_fit, ".", markersize=3, label="Data")
-    ax.plot(noms(m) * K_fine + noms(b), gauss(K_fine, *p), label="Gauss fit")
-    ax.set_title(f"{noms(m * mu + b):.1f} keV")
-    ax.set_xlabel("Energy $E$ / keV")
-axs[0].set_ylabel("Count rate $A$ / s$^{-1}$")
-axs[0].legend()
-fig.tight_layout()
-fig.savefig(dir + "barium_gauss_fits.pdf")
-plt.close(fig)
+    # Beispielhaft nur den Fit der 302.9 keV Linie plotten
+    if abs(noms(m * mu + b) - 302.85) < 2:
+        K_fine = np.linspace(K_fit[0], K_fit[-1], 300)
+        plt.figure()
+        plt.plot(energies[K_fit], y_fit, ".", label="Data")
+        plt.plot(noms(m) * K_fine + noms(b), gauss(K_fine, *p), label="Gauss fit")
+        plt.xlabel("Energy $E$ / keV")
+        plt.ylabel("Counts per second / s$^{-1}$")
+        plt.legend()
+        plt.tight_layout()
+        plt.savefig(dir + "barium_gauss_fit.pdf")
+        plt.close()
 
 N_line = np.array(N_line)
 E_peak = np.array(E_peak)

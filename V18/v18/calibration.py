@@ -32,7 +32,15 @@ peaks, props = find_peaks(counts[:8000], prominence=0.005, width=4)
 
 # Eu-152 Linien aus der Tabelle, die im Messbereich liegen (> ~950 keV ist im Overflow)
 E_lit = np.array([121.7817, 244.6975, 344.2785, 411.1163, 443.965, 778.9040, 867.378])
-I_lit = np.array([28.58, 7.583, 26.5, 2.234, 2.821, 12.942, 4.245])
+# Emissionswahrscheinlichkeiten in % aus dem Eckert & Ziegler Datenblatt (mit Unsicherheit)
+I_lit = unp.uarray([28.58, 7.580, 26.5, 2.234, 3.148, 12.94, 4.245],
+                   [0.09, 0.030, 0.6, 0.025, 0.020, 0.15, 0.021])
+
+# Literaturtabelle der Eu-152 Gammalinien für das Protokoll
+E_tab = ["121.78", "244.70", "344.28", "411.12", "443.96", "778.90", "867.37"]
+tab2tex([E_tab, I_lit], [r"$E_\gamma$ / keV", r"$W$ / \%"], dir_tab + "eu_lit.tex",
+        cpt=r"Energies $E_\gamma$ and emission probabilities $W$ of the used \ce{^{152}Eu} gamma lines~\cite{eu152}.",
+        lbl="Euspec", dgts=[0, 2])
 
 # Grobe Zuordnung über die zwei stärksten Peaks (121.78 keV und 344.28 keV)
 strongest = np.sort(peaks[np.argsort(props["prominences"])[-2:]])
@@ -55,7 +63,7 @@ plt.figure()
 plt.stairs(counts, np.arange(len(counts) + 1), fill=True, label="Eu-152")
 plt.plot(K_peak, counts[K_peak], "x", color="red", label="peaks")
 plt.xlabel("Channel")
-plt.ylabel("Counts $N$")
+plt.ylabel("Counts per second / s$^{-1}$")
 plt.yscale("log")
 plt.legend()
 plt.tight_layout()
@@ -92,8 +100,7 @@ def gauss(K, h, mu, sigma, c):
 
 window = 40  # Kanäle links und rechts vom Peak
 N_line = []
-fig, axs = plt.subplots(2, 4, figsize=(12, 6))
-for K, E, ax in zip(K_peak, E_lit, axs.flat):
+for K, E in zip(K_peak, E_lit):
     K_fit = channels[K - window:K + window]
     y_fit = counts[K - window:K + window]
     p0 = [counts[K], K, 5, np.median(y_fit)]
@@ -102,16 +109,18 @@ for K, E, ax in zip(K_peak, E_lit, axs.flat):
     # Fläche unter dem Gauß = Linieninhalt (hier als Rate in 1/s, weil counts schon durch t geteilt ist)
     N_line.append(np.sqrt(2 * np.pi) * h * abs(sigma))
 
-    K_fine = np.linspace(K_fit[0], K_fit[-1], 300)
-    ax.plot(K_fit, y_fit, ".", markersize=3, label="Data")
-    ax.plot(K_fine, gauss(K_fine, *p), label="Gauss fit")
-    ax.set_title(f"{E:.1f} keV")
-    ax.set_xlabel("Channel $K$")
-axs.flat[0].legend()
-axs.flat[-1].axis("off")
-fig.tight_layout()
-fig.savefig(dir + "eu_gauss_fits.pdf")
-plt.close(fig)
+    # Beispielhaft nur den Fit der 344.3 keV Linie plotten
+    if np.isclose(E, 344.2785):
+        K_fine = np.linspace(K_fit[0], K_fit[-1], 300)
+        plt.figure()
+        plt.plot(K_fit, y_fit, ".", label="Data")
+        plt.plot(K_fine, gauss(K_fine, *p), label="Gauss fit")
+        plt.xlabel("Channel $K$")
+        plt.ylabel("Counts per second / s$^{-1}$")
+        plt.legend()
+        plt.tight_layout()
+        plt.savefig(dir + "eu_gauss_fit.pdf")
+        plt.close()
 N_line = np.array(N_line)
 
 # Full energy detection probability Q = N / (A * W * Omega/4pi)

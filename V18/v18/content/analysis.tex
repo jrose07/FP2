@@ -1,5 +1,108 @@
 \section{Analysis}
 \label{sec:Analysis}
 
+At first the detector has to be callibrated after which differnet gamma spektra are beeing measured, the analysis of this date is followning.
+Before that the underground has to be measured which is shown in \autoref{fig:underground}. In this the Counts per second in the different channels are shown. 
+It is calculated by divding the absolute counts by the time in second for which it was measured which was 21 hours and 11 minutes. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/Underground.pdf}
+    \caption{Measured background spectrum, which is subtracted from all following spectra.}
+    \label{fig:underground}
+\end{figure}
+
+This result is used by subtracting this from all followed measured spectra.
+By which the underground is calculated out of the reals measurements.
+
+\subsection{Detector calibration with \texorpdfstring{\ce{^{152}Eu}}{152Eu}}
+
+The channels of the multichannelanalysator has to be callibrated to begin.
+To do that the measurements of \ce{^152}Eu are depicted in \autoref{fig:eu_calibration}, in which multiple peaks are visible. 
+This peaks are compared with the known gamma spectrum shown in \autoref{tab:Euspec}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/eu_calibration.pdf}
+    \caption{Measured spectrum of \ce{^{152}Eu} with the peaks used for the calibration.}
+    \label{fig:eu_calibration}
+\end{figure}
+
+\input{content/tables/eu_lit.tex}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/eu_linear_fit.pdf}
+    \caption{Literature energies of the \ce{^{152}Eu} lines against the measured channels with a linear fit.}
+    \label{fig:eu_linear_fit}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/eu_gauss_fit.pdf}
+    \caption{Gaussian fit of the $\SI{344.3}{keV}$ line of \ce{^{152}Eu} as an example for the determination of the line content.}
+    \label{fig:eu_gauss_fit}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/eu_efficiency.pdf}
+    \caption{Full energy detection probability $Q$ in dependence of the energy with a power fit for $E > \SI{150}{keV}$.}
+    \label{fig:eu_efficiency}
+\end{figure}
+
+\subsection{Monochromatic gamma source \texorpdfstring{\ce{^{137}Cs}}{137Cs}}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/monochromatic_Cs.pdf}
+    \caption{Measured spectrum of \ce{^{137}Cs} with the positions of the backscatter peak, the Compton edge and the photopeak.}
+    \label{fig:monochromatic_Cs}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/photopeak_Cs.pdf}
+    \caption{Gaussian fit of the photopeak of \ce{^{137}Cs} with the full width at half and at tenth maximum.}
+    \label{fig:photopeak_Cs}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/backscatter_Cs.pdf}
+    \caption{Gaussian fit of the backscatter peak of \ce{^{137}Cs}.}
+    \label{fig:backscatter_Cs}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/compton_Cs.pdf}
+    \caption{Compton continuum of \ce{^{137}Cs} with the fit of the differential cross section.}
+    \label{fig:compton_Cs}
+\end{figure}
+
+\subsection{Activity determination of \texorpdfstring{\ce{^{133}Ba}}{133Ba}}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/barium.pdf}
+    \caption{Measured spectrum of \ce{^{133}Ba} with the found peaks.}
+    \label{fig:barium}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/barium_gauss_fit.pdf}
+    \caption{Gaussian fit of the $\SI{302.9}{keV}$ line of \ce{^{133}Ba} as an example for the determination of the line content.}
+    \label{fig:barium_gauss_fit}
+\end{figure}
+
+\subsection{Gamma spectrum of an unknown source}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{content/plots/unknown.pdf}
+    \caption{Measured spectrum of the unknown source with the found peaks.}
+    \label{fig:unknown}
+\end{figure}
 
 \clearpage
