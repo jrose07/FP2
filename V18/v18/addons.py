@@ -115,7 +115,7 @@ def tab_to_latex(arr, header, filename, cpt="Your Caption Here.", lbl="Your Labe
             f.write('\t\\centering\n')
             f.write('\t\\caption{' + cpt + '}\n')
             f.write('\t\\label{tab:' + lbl + '}\n')
-            f.write('\t\\begin{tabular}{' + ' | '.join(['c'] * len(header)) + '}\n')
+            f.write('\t\\begin{tabular}{' + '  '.join(['c'] * len(header)) + '}\n')
             f.write('\t\t\\toprule\n')
             f.write("\t\t" + ' & '.join(header) + '\\\\\n')
             f.write('\t\t\\midrule\n\t\t')

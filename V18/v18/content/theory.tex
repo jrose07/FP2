@@ -14,6 +14,7 @@ The energy-dependence of these cross-sections is being shown in~\autoref{fig:exc
 This extinction coefficient $\mu$ is primarily relevant when looking at the probability $P$ of a photon being scattered at distance $z$ when going through matter, which is 
 \begin{align}
     P(z) = 1 - \exp(-\mu z) \, .
+    \label{eq:absorption}
 \end{align}
 
 \begin{figure}[htbp]
@@ -52,6 +53,7 @@ For an angle of $\Theta = 180^{\circ}$, the maximal possible energy gets transfe
 For the differential corss section of the compton effect, the Klein-Nishina-formula~\cite{sandnerQuantenelektrodynamikEinfuehrungFuer2023}
 \begin{align}
     \dif{\sigma}{\cos(\Theta_\T{Lab})} = \frac{e^4}{16\pi m^2} \left(\frac{E_\gamma'}{E_\gamma}\right)^2 \left(\frac{E_\gamma}{E_\gamma'} + \frac{E_\gamma'}{E_\gamma} - \sin^2(\Theta_\T{Lab})\right)
+    \label{eq:klein_nishina}
 \end{align}
 can be used. \\
 
@@ -62,7 +64,7 @@ As the photon energies relevant for this experiment are not above this threshold
 
 
 \subsection{Detection using germanium detectors}
-
+\label{sec:theory_detection}
 A germanium detector uses the semiconducting properties of the main material, namely a germanium crystal. 
 Germanium is an indirect semiconductor with a small band gap of $\Delta = \qty{0.67}{eV}$~\cite{bandstructurege}, which is why it has to be cooled with liquid nitrogen, in order for it to not have too much noise due to excited thermal electrons.
 In~\autoref{fig:bands_germanium} the bandstructure of germanium is shown.

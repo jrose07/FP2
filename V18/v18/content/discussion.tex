@@ -8,4 +8,82 @@ For the calculation of the relative experimental error, the formula
 \end{equation}
 is being used.
 
+\subsection{Detector calibration with \texorpdfstring{\ce{^{152}Eu}}{152Eu}}
+
+The linear regression \autoref{eqn:lin} gave the parameters
+\begin{align}
+    m &= \SI{0.11950 \pm 0.00005}{keV}\text{/channel} \\
+    b &= \SI{-0.98 \pm 0.23}{keV} \ .
+\end{align}
+
+$b$ makes physically no sense, because it would mean that at an energy of 0 the detector emits energy, but it is so small that it can be neglected.
+To check the calibration, the energies of the \ce{^{152}Eu} lines calculated with \autoref{eqn:lin} from the fitted peak positions are compared with the literature values in \autoref{tab:disc_eu}.
+In this it is visible that the error is smaller than $\SI{0.1}{\%}$, so the energy calibration fits very well for those values and can be used for all the other steps.
+\input{content/tables/disc_eu.tex}
+
+\subsection{Monochromatic gamma source \texorpdfstring{\ce{^{137}Cs}}{137Cs}}
+
+
+The measured positions of the photopeak, the backscatter peak and the compton edge are compared with the literature and theory values
+\begin{align}
+    E_\text{photo, exp} &= \SI{661.6 \pm 0.4}{keV} & E_\text{photo, lit} &= \SI{661.657}{keV} & \Delta E_\text{photo} &= \SI{0.007}{\percent} \\
+    E_\text{back, exp} &= \SI{188.9 \pm 0.4}{keV} & E_\text{back, theo} &= \SI{184.3}{keV} & \Delta E_\text{back} &= \SI{2.5}{\percent} \\
+    E_\text{ce, exp} &= \SI{477.0 \pm 0.4}{keV} & E_\text{ce, theo} &= \SI{477.3}{keV} & \Delta E_\text{ce} &= \SI{0.06}{\percent} \ .
+\end{align}
+The photopeak fits very well to the literature value, so the calibration also works for this source.
+The full width at half maximum of $\SI{2.386 \pm 0.020}{keV}$ shows the very good energy resolution of the germanium detector.
+\\
+The backscatter peak is $\SI{2.5}{\percent}$ above the theory value.
+This can be explained, because the peak is very broad and lies on the compton continuum, so the gaussian fit describes it only roughly.
+In addition the gamma rays are not only scattered at exactly $\SI{180}{\degree}$ but in a range of angles around it, which shifts the peak to higher energies.
+\\
+The compton edge was determined by eye, because it is smeared out by the resolution of the detector and by multiple compton scattering, so it cannot be fitted well.
+For this an error of $\pm 3$ channels is assumed, which is $\pm\SI{0.4}{keV}$ with the calibration.
+Within this the compton edge fits to the theory value.
+
+The ratio of the line contents of the photopeak and the compton continuum is compared with the ratio of the absorption probabilities
+\begin{align}
+    \frac{N_\text{photo}}{N_\text{compton}} &= \num{0.2784 \pm 0.0030} & \frac{P_\text{photo}}{P_\text{compton}} &= \num{0.040} & \Delta &= \SI{592}{\percent} \ .
+\end{align}
+The measured ratio is about 7 times bigger than the ratio of the absorption probabilities.
+The reason is that $P$ only describes the first interaction of the gamma ray in the detector.
+A lot of gamma rays are first compton scattered and then fully absorbed in the crystal, so they end up in the photopeak and not in the compton continuum.
+Also the extinction coefficients are only read from a plot and the compton fit is only done from $\SI{350}{keV}$ to $\SI{460}{keV}$ and then extrapolated to the whole continuum,
+which both make the result more inaccurate.
+
+\subsection{Activity determination of \texorpdfstring{\ce{^{133}Ba}}{133Ba}}
+
+The measured energies of the \ce{^{133}Ba} lines are compared with the literature values in \autoref{tab:disc_ba}.
+
+
+\input{content/tables/disc_ba.tex}
+
+Once again the energy values are very close to the literature values, so it is shown again that the energy calibration fits.
+\\
+The calculated mean activity of the \ce{^{133}Ba} source is
+\begin{align}
+    A_{\ce{^{133}Ba}} = \SI{771 \pm 10}{Bq} \ .
+\end{align}
+The activities of the single lines are between $\SI{750}{Bq}$ and $\SI{793}{Bq}$ and differ more from each other than their errors.
+This could be because of a systematic error in the fit of $Q$.
+
+\subsection{Gamma spectrum of an unknown source}
+
+The measured energies of the unknown source are compared with the literature values of the assigned nuclides in \autoref{tab:disc_unknown}.
+
+\input{content/tables/disc_unknown.tex}
+
+The calculated activities of the unknown source are
+\begin{align}
+    A_{\ce{^{226}Ra}} &= \SI{1750 \pm 70}{Bq} \\
+    A_{\ce{^{214}Pb}} &= \SI{1216 \pm 41}{Bq} \\
+    A_{\ce{^{214}Bi}} &= \SI{1400 \pm 40}{Bq} \ .
+\end{align}
+Because \ce{^{214}Pb} and \ce{^{214}Bi} are daughter nuclides of \ce{^{226}Ra}, they should all have the same activity in the secular equilibrium.
+\ce{^{214}Pb} and \ce{^{214}Bi} differ by about $\SI{14}{\percent}$, which can be explained by the uncertainty of $Q(E)$ and of the distance $a$.
+Also the activities of the three \ce{^{214}Pb} lines increase with the energy, which also shows that $Q(E)$ is not exact for these energies.
+This all leads to the conclusion that it is a uranium source.
+
+In general it can be said that the germanium detector is very well suited to determine gamma spectra of different sources.
+
 \clearpage

@@ -104,3 +104,23 @@ for nuc in dict.fromkeys(nuclide):
         print(f"{nuc}: A = {np.mean(A_nuc):.0f} +/- {np.std(A_nuc, ddof=1) / np.sqrt(len(A_nuc)):.0f} Bq")
     else:
         print(f"{nuc}: A = {A[np.array(nuclide) == nuc][0]} Bq")
+
+# Tabelle: gefittete Linien und Zuordnung zu den Nukliden
+nuc_tex = [r"\ce{^{226}Ra}", r"\ce{^{214}Pb}", r"\ce{^{214}Pb}", r"\ce{^{214}Pb}", r"\ce{^{214}Bi}"]
+tab2tex([E_peak, N_line, nuc_tex, [f"{E:.2f}" for E in E_lit], [f"{w:.2f}" for w in W * 100]],
+        [r"$E$ / keV", r"$N$ / s$^{-1}$", "Nuclide", r"$E_\text{lit}$ / keV", r"$W$ / \%"], dir_tab + "unknown_lines.tex",
+        cpt=r"Fitted energies $E$ and line contents $N$ of the unknown source with the assigned nuclides and their literature energies $E_\text{lit}$ and emission probabilities $W$~\cite{nndc}.",
+        lbl="unknown_lines", dgts=[2, 2, 0, 0, 0])
+
+# Tabelle: Q und Aktivität pro Linie
+tab2tex([nuc_tex, [f"{E:.2f}" for E in E_lit], Q, A], ["Nuclide", r"$E_\text{lit}$ / keV", r"$Q$", r"$A$ / Bq"],
+        dir_tab + "unknown_activity.tex",
+        cpt=r"Full energy detection probabilities $Q$ and activities $A$ of the lines of the unknown source.",
+        lbl="unknown_activity", dgts=[0, 0, 2, 2])
+
+# Diskussion: gefittete Energien im Vergleich zur Literatur
+dev_unk = np.abs(noms(E_peak) - E_lit) / E_lit * 100
+tab2tex([nuc_tex, [f"{E:.2f}" for E in E_lit], E_peak, [f"{d:.3f}" for d in dev_unk]],
+        ["Nuclide", r"$E_\text{lit}$ / keV", r"$E_\text{exp}$ / keV", r"$\Delta E$ / \%"], dir_tab + "disc_unknown.tex",
+        cpt=r"Literature energies $E_\text{lit}$~\cite{nndc} of the assigned nuclides compared with the measured energies $E_\text{exp}$ of the unknown source.",
+        lbl="disc_unknown", dgts=[0, 0, 2, 0])

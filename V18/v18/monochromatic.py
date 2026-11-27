@@ -63,22 +63,8 @@ print(f"Photolinie: E = {E_photo} keV, sigma = {sigma_E} keV")
 # Halbwerts- und Zehntelwertsbreite aus dem Gauß-Fit
 FWHM_gauss = 2 * np.sqrt(2 * np.log(2)) * sigma_E
 FWTM_gauss = 2 * np.sqrt(2 * np.log(10)) * sigma_E
-
-# Halbwerts- und Zehntelwertsbreite direkt aus den Daten (linear interpoliert)
-def width_at(fraction):
-    level = noms(c) + fraction * noms(h)
-    # links und rechts vom Maximum den ersten Kanal unter dem Level suchen
-    left = K_max - np.argmax(counts[K_max::-1] < level)
-    right = K_max + np.argmax(counts[K_max:] < level)
-    K_left = np.interp(level, [counts[left], counts[left + 1]], [left, left + 1])
-    K_right = np.interp(level, [counts[right], counts[right - 1]], [right, right - 1])
-    return noms(m) * (K_right - K_left)
-
-FWHM_data = width_at(1 / 2)
-FWTM_data = width_at(1 / 10)
-print(f"Halbwertsbreite:   Gauss = {FWHM_gauss} keV, Daten = {FWHM_data:.3f} keV")
-print(f"Zehntelwertsbreite: Gauss = {FWTM_gauss} keV, Daten = {FWTM_data:.3f} keV")
-print(f"Verhältnis FWTM/FWHM: Daten = {FWTM_data / FWHM_data:.3f}, Gauss = {np.sqrt(np.log(10) / np.log(2)):.3f}")
+print(f"Halbwertsbreite:    FWHM = {FWHM_gauss} keV")
+print(f"Zehntelwertsbreite: FWTM = {FWTM_gauss} keV")
 
 # Linieninhalt = Fläche unter dem Gauß (in Kanälen, daher Rate in 1/s)
 N_photo = np.sqrt(2 * np.pi) * h * sigma
@@ -128,7 +114,7 @@ plt.close()
 # Übersichtsplot mit allen Strukturen
 plt.figure()
 plt.stairs(counts, edges, fill=True, label="Cs-137")
-plt.axvline(32, color="red", ls="--", label="Ba X-ray (expected)")
+# plt.axvline(32, color="red", ls="--", label="Ba X-ray (expected)")
 plt.axvline(noms(E_back), color="green", ls="--", label="Backscatter peak")
 plt.axvline(E_compton_theo, color="orange", ls="--", label="Compton edge")
 plt.axvline(noms(E_photo), color="pink", ls="--", label="Photopeak")

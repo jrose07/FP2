@@ -80,9 +80,9 @@ E_peak = np.array(E_peak)
 for E, N in zip(E_peak, N_line):
     print(f"E = {E} keV   N = {N} 1/s")
 
-# Emissionswahrscheinlichkeiten der Ba-133 Linien (NNDC), gleiche Reihenfolge wie peaks_fit
-E_lit = np.array([276.3989, 302.8508, 356.0129, 383.8485])  # keV
-W = np.array([7.16, 18.34, 62.05, 8.94]) / 100
+# Emissionswahrscheinlichkeiten der Ba-133 Linien (Eckert & Ziegler Datenblatt), gleiche Reihenfolge wie peaks_fit
+E_lit = np.array([276.40, 302.85, 356.02, 383.85])  # keV
+W = unp.uarray([7.164, 18.33, 62.05, 8.94], [0.022, 0.06, 0.19, 0.03]) / 100
 
 # Q(E) = q_a * E^q_b direkt aus calibration.py (Parameter mit Kovarianzmatrix)
 q_a, q_b = correlated_values(params_Q, cov_Q)
@@ -102,3 +102,20 @@ for E, q, act in zip(E_lit, Q, A):
 A_mean = np.mean(noms(A))
 A_mean_err = np.std(noms(A), ddof=1) / np.sqrt(len(A))
 print(f"Mittlere Aktivität: A = {A_mean:.0f} +/- {A_mean_err:.0f} Bq")
+
+# Tabelle: Literaturwerte der Ba-133 Linien
+tab2tex([[f"{E:.2f}" for E in E_lit], W * 100], [r"$E_\gamma$ / keV", r"$W$ / \%"], dir_tab + "ba_lit.tex",
+        cpt=r"Energies $E_\gamma$ and emission probabilities $W$ of the used \ce{^{133}Ba} gamma lines~\cite{ba133}.",
+        lbl="ba_lit", dgts=[0, 2])
+
+# Tabelle: gefittete Energie, Linieninhalt, Q und Aktivität pro Linie
+tab2tex([E_peak, N_line, Q, A], [r"$E$ / keV", r"$N$ / s$^{-1}$", r"$Q$", r"$A$ / Bq"], dir_tab + "ba_activity.tex",
+        cpt=r"Fitted energies $E$, line contents $N$, full energy detection probabilities $Q$ and activities $A$ of the \ce{^{133}Ba} lines.",
+        lbl="ba_activity", dgts=[2, 2, 2, 2])
+
+# Diskussion: gefittete Energien im Vergleich zur Literatur
+dev_ba = np.abs(noms(E_peak) - E_lit) / E_lit * 100
+tab2tex([[f"{E:.2f}" for E in E_lit], E_peak, [f"{d:.3f}" for d in dev_ba]],
+        [r"$E_\text{lit}$ / keV", r"$E_\text{exp}$ / keV", r"$\Delta E$ / \%"], dir_tab + "disc_ba.tex",
+        cpt=r"Literature energies $E_\text{lit}$~\cite{ba133} of the \ce{^{133}Ba} lines compared with the measured energies $E_\text{exp}$.",
+        lbl="disc_ba", dgts=[0, 2, 0])
